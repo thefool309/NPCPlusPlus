@@ -1,4 +1,4 @@
-#NPCPlusPlus
+##NPCPlusPlus##
 
 
 It's an NPC generator for 5e DND. Completely FREE and can be run Locally and offline. Just hosting it here as it's my first C++ project and I like having a backup. Feel free to download and change whatever you want, and check out my python version as well it's farther along than this one at the moment.
