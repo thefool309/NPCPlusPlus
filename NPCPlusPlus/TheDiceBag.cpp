@@ -4,24 +4,43 @@
 class Dice {
 public:
 	static int AbilityScores() {
-		int abilityScore;
+		int abilityScore = 0;
 		int ASmaxValue = 18;
 		int ASminValue = 9;
-		srand(time(0));
+		unsigned int seed = 1;
+		srand(time(NULL));
 		abilityScore = rand() % (ASmaxValue - ASminValue + 1) + ASminValue;
 		return abilityScore;
 	}
 	
-	static int Hitpoints(int maxHitDie, int numberOfDice) {
-		srand(time(0));
+	static int Hitpoints(int maxHitDie, int numberOfDice, int conBonus) {
+		srand(time(NULL));
 		int minHitDie = 3;
 		int hitpoints = 0;
 		int hitpointsArray[30];
 		for (int i = 0; i <= numberOfDice; i++) {
 			hitpointsArray[i] = rand() % (maxHitDie - minHitDie + 1) + minHitDie;
-			hitpoints = hitpoints + hitpointsArray[i];
+			hitpoints = hitpoints + conBonus + hitpointsArray[i];
 		};
 		return hitpoints;
-		
+	}
+	static int ASModifier(int abilityScore) {
+		int ASBonus;
+		if (abilityScore <= 9)
+			ASBonus = -1;
+		else if (abilityScore <= 11)
+			ASBonus = 0;
+		else if (abilityScore <= 13)
+			ASBonus = 1;
+		else if (abilityScore <= 15)
+			ASBonus = 2;
+		else if (abilityScore <= 17)
+			ASBonus = 3;
+		else if (abilityScore <= 19)
+			ASBonus = 4;
+		else
+			ASBonus = 5;
+
+		return ASBonus;
 	}
 };

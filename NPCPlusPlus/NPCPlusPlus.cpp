@@ -53,7 +53,9 @@ int main()
 	cout << "please assign these scores:" << endl;
 	cout << setw(10) << "STR: ";
 	cin >> str;
-	if (str <= 9)
+	strBonus = Dice::ASModifier(str);
+	
+	/*if (str <= 9)
 		strBonus = -1;
 	else if (str <= 11)
 		strBonus = 0;
@@ -66,7 +68,7 @@ int main()
 	else if (str <= 19)
 		strBonus = 4;
 	else
-		strBonus = 5;
+		strBonus = 5;*/
 
 
 	cout << setw(10) << "DEX: ";
