@@ -3,16 +3,6 @@
 
 class Dice {
 public:
-	static int AbilityScores() {
-		int abilityScore = 0;
-		int ASmaxValue = 18;
-		int ASminValue = 9;
-		unsigned int seed = 1;
-		srand(time(NULL));
-		abilityScore = rand() % (ASmaxValue - ASminValue + 1) + ASminValue;
-		return abilityScore;
-	}
-	
 	static int Hitpoints(int maxHitDie, int numberOfDice, int conBonus) {
 		srand(time(NULL));
 		int minHitDie = 3;
