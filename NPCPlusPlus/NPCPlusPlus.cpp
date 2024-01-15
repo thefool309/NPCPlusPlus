@@ -16,22 +16,26 @@ int main()
 {
 	//AS in this context is ability scores shortened for brevity
 	// this is to represent the minimum and maximum amount you can roll on ability scores 
-	
+	srand(time(NULL));
+	int ASmaxValue = 18;
+	int ASminValue = 9;
 
-	int ASroll1 = Dice::AbilityScores();
-	int ASroll2 = Dice::AbilityScores();
-	int ASroll3 = Dice::AbilityScores();
-	int ASroll4 = Dice::AbilityScores();
-	int ASroll5 = Dice::AbilityScores();
-	int ASroll6 = Dice::AbilityScores();
-	
-	cout << "Ability Score 1 rolled: " << ASroll1 << endl
+	//roll ability scores
+	int ASroll1 = rand() % (ASmaxValue - ASminValue + 1) + ASminValue; 
+	int ASroll2 = rand() % (ASmaxValue - ASminValue + 1) + ASminValue;
+	int ASroll3 = rand() % (ASmaxValue - ASminValue + 1) + ASminValue;
+	int ASroll4 = rand() % (ASmaxValue - ASminValue + 1) + ASminValue;
+	int ASroll5 = rand() % (ASmaxValue - ASminValue + 1) + ASminValue;
+	int ASroll6 = rand() % (ASmaxValue - ASminValue + 1) + ASminValue;
+
+	//print the ability scores back
+	cout << "Ability Score 1 rolled: " << ASroll1 << endl 
 		<< "Ability Score 2 rolled: " << ASroll2 << endl
 		<< "Ability Score 3 rolled: " << ASroll3 << endl
 		<< "Ability Score 4 rolled: " << ASroll4 << endl
 		<< "Ability Score 5 rolled: " << ASroll5 << endl
 		<< "Ability Score 6 rolled: " << ASroll6 << endl;
-
+	//define variables for ability scores and bonuses
 	int str;
 	int strBonus;
 
@@ -49,123 +53,41 @@ int main()
 
 	int cha;
 	int chaBonus;
-
+	//take user input on where they would like to assign these scores
 	cout << "please assign these scores:" << endl;
 	cout << setw(10) << "STR: ";
 	cin >> str;
 	strBonus = Dice::ASModifier(str);
-	
-	/*if (str <= 9)
-		strBonus = -1;
-	else if (str <= 11)
-		strBonus = 0;
-	else if (str <= 13)
-		strBonus = 1;
-	else if (str <= 15)
-		strBonus = 2;
-	else if (str <= 17)
-		strBonus = 3;
-	else if (str <= 19)
-		strBonus = 4;
-	else
-		strBonus = 5;*/
-
 
 	cout << setw(10) << "DEX: ";
 	cin >> dex;
-	if (dex <= 9)
-		dexBonus = -1;
-	else if (dex <= 11)
-		dexBonus = 0;
-	else if (dex <= 13)
-		dexBonus = 1;
-	else if (dex <= 15)
-		dexBonus = 2;
-	else if (dex <= 17)
-		dexBonus = 3;
-	else if (dex <= 19)
-		dexBonus = 4;
-	else
-		dexBonus = 5;
-
+	dexBonus = Dice::ASModifier(dex);
 
 	cout << setw(10) << "CON: ";
 	cin >> con;
-	if (con <= 9)
-		conBonus = -1;
-	else if (con <= 11)
-		conBonus = 0;
-	else if (con <= 13)
-		conBonus = 1;
-	else if (con <= 15)
-		conBonus = 2;
-	else if (con <= 17)
-		conBonus = 3;
-	else if (con <= 19)
-		conBonus = 4;
-	else
-		conBonus = 5;
+	conBonus = Dice::ASModifier(con);
 
 	cout << setw(10) << "INT: ";
 	cin >> intel;
-	if (intel <= 9)
-		intelBonus = -1;
-	else if (intel <= 11)
-		intelBonus = 0;
-	else if (intel <= 13)
-		intelBonus = 1;
-	else if (intel <= 15)
-		intelBonus = 2;
-	else if (intel <= 17)
-		intelBonus = 3;
-	else if (intel <= 19)
-		intelBonus = 4;
-	else
-		intelBonus = 5;
+	intelBonus = Dice::ASModifier(intel);
 
 	cout << setw(10) << "WIS: ";
 	cin >> wis;
-	if (wis <= 9)
-		wisBonus = -1;
-	else if (wis <= 11)
-		wisBonus = 0;
-	else if (wis <= 13)
-		wisBonus = 1;
-	else if (wis <= 15)
-		wisBonus = 2;
-	else if (wis <= 17)
-		wisBonus = 3;
-	else if (wis <= 19)
-		wisBonus = 4;
-	else
-		wisBonus = 5;
+	wisBonus = Dice::ASModifier(wis);
 
 	cout << setw(10) << "CHA: ";
 	cin >> cha;
-	if (cha <= 9)
-		chaBonus = -1;
-	else if (cha <= 11)
-		chaBonus = 0;
-	else if (cha <= 13)
-		chaBonus = 1;
-	else if (cha <= 15)
-		chaBonus = 2;
-	else if (cha <= 17)
-		chaBonus = 3;
-	else if (cha <= 19)
-		chaBonus = 4;
-	else
-		chaBonus = 5;
+	chaBonus = Dice::ASModifier(cha);
 
 	int profBonus;
 	cout << "What is your proficiency bonus? " << endl;
 	cin >> profBonus;
-	int miscAttackMod;
+	int miscPhysAttackMod;
 	cout << "Any other bonuses to physical attacks? " << endl;
-	cin >> miscAttackMod;
+	cin >> miscPhysAttackMod;
 
-	int strBasedAttackBonus = strBonus + profBonus + miscAttackMod;
-	int dexBasedAttackBonus = dexBonus + profBonus + miscAttackMod;
+	int strBasedAttackBonus = strBonus + profBonus + miscPhysAttackMod;
+	int dexBasedAttackBonus = dexBonus + profBonus + miscPhysAttackMod;
 
 	// in this context SC is Spell Casting abbreviated
 	cout << "1- WIS" << endl
