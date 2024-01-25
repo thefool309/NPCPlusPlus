@@ -65,6 +65,8 @@ int main()
 	int cha;
 	int chaBonus;
 
+	//as or AS in these contexts stands for ability score
+
 	string asPrimeText = "please assign this score";
 	string strPromptText = "          STR: ";
 	string dexPromptText = "          DEX: ";
