@@ -64,30 +64,35 @@ int main()
 
 	int cha;
 	int chaBonus;
+
+	string asPrimeText = "please assign this score";
+	string strPromptText = "          STR: ";
+	string dexPromptText = "          DEX: ";
+	string conPromptText = "          CON: ";
+	string intPromptText = "          INT: ";
+	string wisPromptText = "          WIS: ";
+	string chaPromptText = "          CHA: ";
+
+	int asMin = 8;
+	int asMax = 20;
+
 	//take user input on where they would like to assign these scores
-	cout << "please assign these scores:" << endl;
-	cout << setw(10) << "STR: ";
-	cin >> str;
+	str = UI::VerifyIntegerInput(asMin, asMax, asPrimeText, strPromptText);
 	strBonus = Dice::ASModifier(str);
 
-	cout << setw(10) << "DEX: ";
-	cin >> dex;
+	dex = UI::VerifyIntegerInput(asMin, asMax, asPrimeText, dexPromptText);;
 	dexBonus = Dice::ASModifier(dex);
 
-	cout << setw(10) << "CON: ";
-	cin >> con;
+	con = UI::VerifyIntegerInput(asMin, asMax, asPrimeText, conPromptText);;
 	conBonus = Dice::ASModifier(con);
 
-	cout << setw(10) << "INT: ";
-	cin >> intel;
+	intel = UI::VerifyIntegerInput(asMin, asMax, asPrimeText, intPromptText);
 	intelBonus = Dice::ASModifier(intel);
 
-	cout << setw(10) << "WIS: ";
-	cin >> wis;
+	wis = UI::VerifyIntegerInput(asMin, asMax, asPrimeText, wisPromptText);
 	wisBonus = Dice::ASModifier(wis);
 
-	cout << setw(10) << "CHA: ";
-	cin >> cha;
+	cha = UI::VerifyIntegerInput(asMin, asMax, asPrimeText, chaPromptText);;
 	chaBonus = Dice::ASModifier(cha);
 
 	UI::ClearConsole();
@@ -146,6 +151,8 @@ int main()
 
 	//user inputs maxHitDie and program verifies that it is in range
 	maxHitDie = UI::VerifyIntegerInput(hitdieInputMin, hitdieInputMax, hitdiePrime, hitdiePrompt);
+	
+	UI::ClearConsole();
 
 	int numberOfDice = 0;
 	//define prompts for the ui input method
@@ -156,6 +163,8 @@ int main()
 
 	//user inputs numberOfDice and program verifies that it is in range
 	numberOfDice = UI::VerifyIntegerInput(numberOfDiceMin, numberOfDiceMax, numberOfDicePrime, numberOfDicePrompt);
+
+	UI::ClearConsole();
 
 	int hitpoints = maxHitDie + conBonus; // define hitpoints at first level
 	int hpPerLvl; //declare hpPerLvl this will be the hp increase per level

@@ -42,7 +42,6 @@ public:
 			}
 			else {	//otherwise Inform the user to move forward
 				cout << "Good Job! Please move forward to the next step \n";
-				UI::ClearConsole();
 			}
 		}
 		return result;
