@@ -1,6 +1,13 @@
 // NPCPlusPlus.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
-
+///<summary>
+///Welcome to NPC++, A Dungeons and Dragons 5e NPC stat generator
+///this is licensed under the Unlicense
+///You have full permission to download, change, and redistribute this code 
+///I have no affiliations with any repos or forks of NPC aside from 
+///thefool309/NPCplusplus
+///Happy Adventures and Happy Coding!
+/// </summary>
 
 #include <iostream>
 #include <cmath>
@@ -134,35 +141,21 @@ int main()
 	//define prompts for the ui input method
 	string hitdiePrime = "Please enter the maximum value of the hit die";
 	string hitdiePrompt = "Largest Number on Hit Die: ";
+	int hitdieInputMin = 0; //lowest input for maxHitDie
+	int hitdieInputMax = 12; //highest input for maxHitDie
 
-	while (maxHitDie <= 0 || maxHitDie > 12) //while maxhitdie is less than or equal to 0 or greater than 12
-	{										//recieve input from the user for max hit die
-		maxHitDie = UI::RecieveIntegerInput(hitdiePrime, hitdiePrompt);
-		if (maxHitDie <= 0 || maxHitDie > 12) {	//if maxHitDie is equal to 0 
-			cout << "Try again! \n";   //inform the user to try again
-		}
-		else {	//otherwise Inform the user to move forward
-			cout << "Good Job! Please move forward to the next step \n";
-			UI::ClearConsole();
-		}
-	}
+	//user inputs maxHitDie and program verifies that it is in range
+	maxHitDie = UI::VerifyIntegerInput(hitdieInputMin, hitdieInputMax, hitdiePrime, hitdiePrompt);
 
 	int numberOfDice = 0;
 	//define prompts for the ui input method
 	string numberOfDicePrime = "Please enter the number of Hit Dice (a.k.a. the LVL)";
 	string numberOfDicePrompt = "Number of Hit Dice: ";
+	int numberOfDiceMin = 0; //lowest input for numberOfDice
+	int numberOfDiceMax = 20;//Highest input for numberOfDice
 
-	while (numberOfDice <= 0 || numberOfDice > 20) //while numberOfDice is less than or equal to 0 or greater than 20
-	{										//recieve input from the user for max hit die
-		numberOfDice = UI::RecieveIntegerInput(numberOfDicePrime, numberOfDicePrompt);
-		if (numberOfDice <= 0 || numberOfDice > 20) {	//if numberOfDice is less than or equal to 0 or greater than 20 
-			cout << "Try again! \n";   //inform the user to try again
-		}
-		else {	//otherwise Inform the user to move forward
-			cout << "Good Job! Please move forward to the next step \n";
-			UI::ClearConsole();
-		}
-	}
+	//user inputs numberOfDice and program verifies that it is in range
+	numberOfDice = UI::VerifyIntegerInput(numberOfDiceMin, numberOfDiceMax, numberOfDicePrime, numberOfDicePrompt);
 
 	int hitpoints = maxHitDie + conBonus; // define hitpoints at first level
 	int hpPerLvl; //declare hpPerLvl this will be the hp increase per level
@@ -179,13 +172,10 @@ int main()
 		hpPerLvl = 7;							 // in hpPerLvl at max value of 7
 	}
 
-
 	//generate hitpoints with this loop
 	for (int i = 1; i < numberOfDice; i++) { // while i is less than the number of hitdice
 		hitpoints = hitpoints += (conBonus + hpPerLvl); // add conbonus and hpPerLvl to hitpoints
 	}
-
-	
 
 	cout << "these are your final scores:" << endl
 		<< setw(10) << "STR:" << setw(3) << str << setw(3)
