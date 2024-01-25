@@ -29,7 +29,7 @@ int main()
 	int ASroll6 = rand() % (ASmaxValue - ASminValue + 1) + ASminValue;
 
 	//print the ability scores back
-	cout << "Ability Score 1 rolled: " << ASroll1 << endl 
+	cout << "Ability Score 1 rolled: " << ASroll1 << endl
 		<< "Ability Score 2 rolled: " << ASroll2 << endl
 		<< "Ability Score 3 rolled: " << ASroll3 << endl
 		<< "Ability Score 4 rolled: " << ASroll4 << endl
@@ -37,7 +37,7 @@ int main()
 		<< "Ability Score 6 rolled: " << ASroll6 << endl;
 
 	
-	UI::ClearConsole();
+	
 
 	//define variables for ability scores and bonuses
 	int str;
@@ -63,36 +63,21 @@ int main()
 	cin >> str;
 	strBonus = Dice::ASModifier(str);
 
-	
-	UI::ClearConsole();
-
 	cout << setw(10) << "DEX: ";
 	cin >> dex;
 	dexBonus = Dice::ASModifier(dex);
-
-	
-	UI::ClearConsole();
 
 	cout << setw(10) << "CON: ";
 	cin >> con;
 	conBonus = Dice::ASModifier(con);
 
-	
-	UI::ClearConsole();
-
 	cout << setw(10) << "INT: ";
 	cin >> intel;
 	intelBonus = Dice::ASModifier(intel);
 
-	
-	UI::ClearConsole();
-
 	cout << setw(10) << "WIS: ";
 	cin >> wis;
 	wisBonus = Dice::ASModifier(wis);
-
-	
-	UI::ClearConsole();
 
 	cout << setw(10) << "CHA: ";
 	cin >> cha;
@@ -169,7 +154,7 @@ int main()
 
 	while (numberOfDice <= 0 || numberOfDice > 20) //while numberOfDice is less than or equal to 0 or greater than 20
 	{										//recieve input from the user for max hit die
-		numberOfDice = UI::RecieveIntegerInput(hitdiePrompt, hitdiePrime);
+		numberOfDice = UI::RecieveIntegerInput(numberOfDicePrime, numberOfDicePrompt);
 		if (numberOfDice <= 0 || numberOfDice > 20) {	//if numberOfDice is less than or equal to 0 or greater than 20 
 			cout << "Try again! \n";   //inform the user to try again
 		}
@@ -178,6 +163,29 @@ int main()
 			UI::ClearConsole();
 		}
 	}
+
+	int hitpoints = maxHitDie + conBonus; // define hitpoints at first level
+	int hpPerLvl; //declare hpPerLvl this will be the hp increase per level
+	if (maxHitDie > 0 && maxHitDie <= 6) { // to remove room for user error 
+		hpPerLvl = 4;				     // these conditions are defined in a range 1-6
+	}
+	else if (maxHitDie > 6 && maxHitDie <= 8) { // range 6-8
+		hpPerLvl = 5;
+	}
+	else if (maxHitDie > 8 && maxHitDie <= 10) { //range 8-10
+		hpPerLvl = 6;
+	}
+	else {										 //anything other than these values will result
+		hpPerLvl = 7;							 // in hpPerLvl at max value of 7
+	}
+
+
+	//generate hitpoints with this loop
+	for (int i = 1; i < numberOfDice; i++) { // while i is less than the number of hitdice
+		hitpoints = hitpoints += (conBonus + hpPerLvl); // add conbonus and hpPerLvl to hitpoints
+	}
+
+	
 
 	cout << "these are your final scores:" << endl
 		<< setw(10) << "STR:" << setw(3) << str << setw(3)
@@ -207,6 +215,11 @@ int main()
 	cout << "Your Spell attack bonus: " << SCattackBonus << endl
 		<< "Your Spell Save DC: " << spellSaveDC << endl;
 
+	cin.get();
+
+	cout << endl << "Your HitPoints: " << hitpoints << endl;
+
+	cout << "Press any key to continue...";
 
 	cin.get();
 	
