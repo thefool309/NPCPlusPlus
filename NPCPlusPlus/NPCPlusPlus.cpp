@@ -5,7 +5,7 @@
 ///this is licensed under the Unlicense
 ///You have full permission to download, change, and redistribute this code 
 ///I have no affiliations with any repos or forks of NPC aside from 
-///thefool309/NPCplusplus
+///thefool309/NPCplusplus and it's original repo on my deadname github
 ///Happy Adventures and Happy Coding!
 /// </summary>
 
