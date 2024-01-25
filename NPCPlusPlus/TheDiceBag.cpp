@@ -1,19 +1,10 @@
 #include <ctime>
 #include <cmath>
+#include <iostream>
 
+using namespace std;
 class Dice {
 public:
-	static int Hitpoints(int maxHitDie, int numberOfDice, int conBonus) {
-		srand(time(NULL));
-		int minHitDie = 3;
-		int hitpoints = 0;
-		int hitpointsArray[30];
-		for (int i = 0; i <= numberOfDice; i++) {
-			hitpointsArray[i] = rand() % (maxHitDie - minHitDie + 1) + minHitDie;
-			hitpoints = hitpoints + conBonus + hitpointsArray[i];
-		};
-		return hitpoints;
-	}
 	static int ASModifier(int abilityScore) {
 		int ASBonus;
 		if (abilityScore <= 9)
@@ -33,4 +24,23 @@ public:
 
 		return ASBonus;
 	}
+};
+class UI
+{
+public:
+	static int RecieveIntegerInput(string primeText, string promptText) {
+		int result;
+		cout << primeText << endl;
+		cout << promptText;
+		cin >> result;
+		cout << endl;
+		return result;
+	}
+
+	static void ClearConsole() {
+		cin.get();
+		cout << "\x1B[2J\x1B[H"; //Special string that clears the screen and moves the cursor to the top-left
+	}
+private:
+
 };

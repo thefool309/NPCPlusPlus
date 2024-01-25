@@ -35,6 +35,10 @@ int main()
 		<< "Ability Score 4 rolled: " << ASroll4 << endl
 		<< "Ability Score 5 rolled: " << ASroll5 << endl
 		<< "Ability Score 6 rolled: " << ASroll6 << endl;
+
+	
+	UI::ClearConsole();
+
 	//define variables for ability scores and bonuses
 	int str;
 	int strBonus;
@@ -59,32 +63,54 @@ int main()
 	cin >> str;
 	strBonus = Dice::ASModifier(str);
 
+	
+	UI::ClearConsole();
+
 	cout << setw(10) << "DEX: ";
 	cin >> dex;
 	dexBonus = Dice::ASModifier(dex);
+
+	
+	UI::ClearConsole();
 
 	cout << setw(10) << "CON: ";
 	cin >> con;
 	conBonus = Dice::ASModifier(con);
 
+	
+	UI::ClearConsole();
+
 	cout << setw(10) << "INT: ";
 	cin >> intel;
 	intelBonus = Dice::ASModifier(intel);
+
+	
+	UI::ClearConsole();
 
 	cout << setw(10) << "WIS: ";
 	cin >> wis;
 	wisBonus = Dice::ASModifier(wis);
 
+	
+	UI::ClearConsole();
+
 	cout << setw(10) << "CHA: ";
 	cin >> cha;
 	chaBonus = Dice::ASModifier(cha);
 
+	UI::ClearConsole();
+
 	int profBonus;
 	cout << "What is your proficiency bonus? " << endl;
 	cin >> profBonus;
+
+	UI::ClearConsole();
+
 	int miscPhysAttackMod;
 	cout << "Any other bonuses to physical attacks? " << endl;
 	cin >> miscPhysAttackMod;
+	
+	UI::ClearConsole();
 
 	int strBasedAttackBonus = strBonus + profBonus + miscPhysAttackMod;
 	int dexBasedAttackBonus = dexBonus + profBonus + miscPhysAttackMod;
@@ -97,6 +123,9 @@ int main()
 
 	short SCinput;
 	cin >> SCinput;
+
+	UI::ClearConsole();
+
 	int SCattackBonus;
 	int spellSaveDC;
 	// DC stands for Difficulty Class
@@ -114,6 +143,40 @@ int main()
 		SCattackBonus = (chaBonus + profBonus);
 		spellSaveDC = (8 + chaBonus + profBonus);
 		break;
+	}
+
+	int maxHitDie = 0;
+	//define prompts for the ui input method
+	string hitdiePrime = "Please enter the maximum value of the hit die";
+	string hitdiePrompt = "Largest Number on Hit Die: ";
+
+	while (maxHitDie <= 0 || maxHitDie > 12) //while maxhitdie is less than or equal to 0 or greater than 12
+	{										//recieve input from the user for max hit die
+		maxHitDie = UI::RecieveIntegerInput(hitdiePrime, hitdiePrompt);
+		if (maxHitDie <= 0 || maxHitDie > 12) {	//if maxHitDie is equal to 0 
+			cout << "Try again! \n";   //inform the user to try again
+		}
+		else {	//otherwise Inform the user to move forward
+			cout << "Good Job! Please move forward to the next step \n";
+			UI::ClearConsole();
+		}
+	}
+
+	int numberOfDice = 0;
+	//define prompts for the ui input method
+	string numberOfDicePrime = "Please enter the number of Hit Dice (a.k.a. the LVL)";
+	string numberOfDicePrompt = "Number of Hit Dice: ";
+
+	while (numberOfDice <= 0 || numberOfDice > 20) //while numberOfDice is less than or equal to 0 or greater than 20
+	{										//recieve input from the user for max hit die
+		numberOfDice = UI::RecieveIntegerInput(hitdiePrompt, hitdiePrime);
+		if (numberOfDice <= 0 || numberOfDice > 20) {	//if numberOfDice is less than or equal to 0 or greater than 20 
+			cout << "Try again! \n";   //inform the user to try again
+		}
+		else {	//otherwise Inform the user to move forward
+			cout << "Good Job! Please move forward to the next step \n";
+			UI::ClearConsole();
+		}
 	}
 
 	cout << "these are your final scores:" << endl
@@ -146,6 +209,7 @@ int main()
 
 
 	cin.get();
+	
 
 	return 0;
 }
