@@ -74,32 +74,38 @@ int main()
 	string intPromptText = "          INT: ";
 	string wisPromptText = "          WIS: ";
 	string chaPromptText = "          CHA: ";
+	//define input constants for the programs min and max values
 
-	int asMin = 8;
-	int asMax = 20;
+	const int AS_MIN_INPUT = 8;
+	const int AS_MAX_INPUT = 20;
+
+	const int PROF_MIN_INPUT = 1;
+	const int PROF_MAX_INPUT = 6;
+
+	
 
 	//take user input on where they would like to assign these scores
-	str = UI::VerifyIntegerInput(asMin, asMax, asPrimeText, strPromptText);
+	str = UI::VerifyIntegerInput(AS_MIN_INPUT, AS_MAX_INPUT , asPrimeText, strPromptText); // strength
 	strBonus = Dice::ASModifier(str);
 
-	dex = UI::VerifyIntegerInput(asMin, asMax, asPrimeText, dexPromptText);;
+	dex = UI::VerifyIntegerInput(AS_MIN_INPUT, AS_MAX_INPUT, asPrimeText, dexPromptText); // dexterity
 	dexBonus = Dice::ASModifier(dex);
 
-	con = UI::VerifyIntegerInput(asMin, asMax, asPrimeText, conPromptText);;
+	con = UI::VerifyIntegerInput(AS_MIN_INPUT, AS_MAX_INPUT, asPrimeText, conPromptText);	// constitution   
 	conBonus = Dice::ASModifier(con);
 
-	intel = UI::VerifyIntegerInput(asMin, asMax, asPrimeText, intPromptText);
+	intel = UI::VerifyIntegerInput(AS_MIN_INPUT, AS_MAX_INPUT, asPrimeText, intPromptText); // intelligence
 	intelBonus = Dice::ASModifier(intel);
 
-	wis = UI::VerifyIntegerInput(asMin, asMax, asPrimeText, wisPromptText);
+	wis = UI::VerifyIntegerInput(AS_MIN_INPUT, AS_MAX_INPUT, asPrimeText, wisPromptText);	// wisdom
 	wisBonus = Dice::ASModifier(wis);
 
-	cha = UI::VerifyIntegerInput(asMin, asMax, asPrimeText, chaPromptText);;
+	cha = UI::VerifyIntegerInput(AS_MIN_INPUT, AS_MAX_INPUT, asPrimeText, chaPromptText);	// charisma
 	chaBonus = Dice::ASModifier(cha);
 
 	UI::ClearConsole();
 
-	int profBonus;
+	int profBonus; 
 	cout << "What is your proficiency bonus? " << endl;
 	cin >> profBonus;
 

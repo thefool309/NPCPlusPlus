@@ -29,6 +29,7 @@ public:
 		return ASBonus;
 	}
 };
+
 class UI
 {
 public:
