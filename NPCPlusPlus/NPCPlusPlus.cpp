@@ -76,13 +76,20 @@ int main()
 	string chaPromptText = "          CHA: ";
 	//define input constants for the programs min and max values
 
-	const int AS_MIN_INPUT = 8;
-	const int AS_MAX_INPUT = 20;
+	const int AS_MIN_INPUT = 8; //ability score input minimum
+	const int AS_MAX_INPUT = 20; // ability score input maximum
 
-	const int PROF_MIN_INPUT = 1;
-	const int PROF_MAX_INPUT = 6;
+	const int PROF_MIN_INPUT = 1; // Proficiency bonus input minimum
+	const int PROF_MAX_INPUT = 6; // proficiency bonus input maximum
 
-	
+	const int NUMBER_OF_DICE_MIN = 0; //lowest input for numberOfDice
+	const int NUMBER_OF_DICE_MAX = 20;//Highest input for numberOfDice
+
+	const int HITDIE_INPUT_MIN = 0; //lowest input for maxHitDie
+	const int HITDIE_INPUT_MAX = 12; //highest input for maxHitDie
+
+	const int MISC_ATTACK_BONUS_MIN = -1; //lowest input for misc attack mods
+	const int MISC_ATTACK_BONUS_MAX = 10; //highest input for misc attack mods
 
 	//take user input on where they would like to assign these scores
 	str = UI::VerifyIntegerInput(AS_MIN_INPUT, AS_MAX_INPUT , asPrimeText, strPromptText); // strength
@@ -105,20 +112,25 @@ int main()
 
 	UI::ClearConsole();
 
-	int profBonus; 
-	cout << "What is your proficiency bonus? " << endl;
-	cin >> profBonus;
+	int profBonus;
+
+	string profBonusPrime = "What is your proficiency bonus? ";
+	string profBonusPrompt = "Proficiency Bonus: ";				//intake user input on prof bonus
+	profBonus = UI::VerifyIntegerInput(PROF_MIN_INPUT, PROF_MAX_INPUT,
+										profBonusPrime , profBonusPrompt);
 
 	UI::ClearConsole();
 
 	int miscPhysAttackMod;
-	cout << "Any other bonuses to physical attacks? " << endl;
-	cin >> miscPhysAttackMod;
+	string miscAttackPrime = "Any other bonuses to physical attacks? ";
+	string miscAttackPrompt = "Miscellaneous Attack Modifier: ";		//intake user input on misc attack mods
+	miscPhysAttackMod = UI::VerifyIntegerInput(MISC_ATTACK_BONUS_MIN, MISC_ATTACK_BONUS_MAX,
+												miscAttackPrime, miscAttackPrompt);	
 	
 	UI::ClearConsole();
 
-	int strBasedAttackBonus = strBonus + profBonus + miscPhysAttackMod;
-	int dexBasedAttackBonus = dexBonus + profBonus + miscPhysAttackMod;
+	int strBasedAttackBonus = strBonus + profBonus + miscPhysAttackMod; //str based attack bonus
+	int dexBasedAttackBonus = dexBonus + profBonus + miscPhysAttackMod; //dex based attack bonus
 
 	// in this context SC is Spell Casting abbreviated
 	cout << "1- WIS" << endl
@@ -154,11 +166,10 @@ int main()
 	//define prompts for the ui input method
 	string hitdiePrime = "Please enter the maximum value of the hit die";
 	string hitdiePrompt = "Largest Number on Hit Die: ";
-	int hitdieInputMin = 0; //lowest input for maxHitDie
-	int hitdieInputMax = 12; //highest input for maxHitDie
+	
 
 	//user inputs maxHitDie and program verifies that it is in range
-	maxHitDie = UI::VerifyIntegerInput(hitdieInputMin, hitdieInputMax, hitdiePrime, hitdiePrompt);
+	maxHitDie = UI::VerifyIntegerInput(HITDIE_INPUT_MIN, HITDIE_INPUT_MAX, hitdiePrime, hitdiePrompt);
 	
 	UI::ClearConsole();
 
@@ -166,11 +177,10 @@ int main()
 	//define prompts for the ui input method
 	string numberOfDicePrime = "Please enter the number of Hit Dice (a.k.a. the LVL)";
 	string numberOfDicePrompt = "Number of Hit Dice: ";
-	int numberOfDiceMin = 0; //lowest input for numberOfDice
-	int numberOfDiceMax = 20;//Highest input for numberOfDice
+	
 
 	//user inputs numberOfDice and program verifies that it is in range
-	numberOfDice = UI::VerifyIntegerInput(numberOfDiceMin, numberOfDiceMax, numberOfDicePrime, numberOfDicePrompt);
+	numberOfDice = UI::VerifyIntegerInput(NUMBER_OF_DICE_MIN, NUMBER_OF_DICE_MAX, numberOfDicePrime, numberOfDicePrompt);
 
 	UI::ClearConsole();
 
