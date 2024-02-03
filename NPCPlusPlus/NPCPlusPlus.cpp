@@ -27,21 +27,13 @@ int main()
 	int ASmaxValue = 18;
 	int ASminValue = 9;
 
+	vector<int> ASrolls = Dice::RollAS();
 	//roll ability scores
-	int ASroll1 = rand() % (ASmaxValue - ASminValue + 1) + ASminValue; 
-	int ASroll2 = rand() % (ASmaxValue - ASminValue + 1) + ASminValue;
-	int ASroll3 = rand() % (ASmaxValue - ASminValue + 1) + ASminValue;
-	int ASroll4 = rand() % (ASmaxValue - ASminValue + 1) + ASminValue;
-	int ASroll5 = rand() % (ASmaxValue - ASminValue + 1) + ASminValue;
-	int ASroll6 = rand() % (ASmaxValue - ASminValue + 1) + ASminValue;
 
 	//print the ability scores back
-	cout << "Ability Score 1 rolled: " << ASroll1 << endl
-		<< "Ability Score 2 rolled: " << ASroll2 << endl
-		<< "Ability Score 3 rolled: " << ASroll3 << endl
-		<< "Ability Score 4 rolled: " << ASroll4 << endl
-		<< "Ability Score 5 rolled: " << ASroll5 << endl
-		<< "Ability Score 6 rolled: " << ASroll6 << endl;
+	for (int i = 0; i < ASrolls.size(); i++) {
+		cout << "Ability Score rolled: " << ASrolls[i] << endl;
+	}
 
 	
 	
@@ -184,25 +176,8 @@ int main()
 
 	UI::ClearConsole();
 
-	int hitpoints = maxHitDie + conBonus; // define hitpoints at first level
-	int hpPerLvl; //declare hpPerLvl this will be the hp increase per level
-	if (maxHitDie > 0 && maxHitDie <= 6) { // to remove room for user error 
-		hpPerLvl = 4;				     // these conditions are defined in a range 1-6
-	}
-	else if (maxHitDie > 6 && maxHitDie <= 8) { // range 6-8
-		hpPerLvl = 5;
-	}
-	else if (maxHitDie > 8 && maxHitDie <= 10) { //range 8-10
-		hpPerLvl = 6;
-	}
-	else {										 //anything other than these values will result
-		hpPerLvl = 7;							 // in hpPerLvl at max value of 7
-	}
-
-	//generate hitpoints with this loop
-	for (int i = 1; i < numberOfDice; i++) { // while i is less than the number of hitdice
-		hitpoints = hitpoints += (conBonus + hpPerLvl); // add conbonus and hpPerLvl to hitpoints
-	}
+	int hitpoints = Dice::RollHP(maxHitDie, numberOfDice, conBonus); // roll hitpoints
+	
 
 	cout << "these are your final scores:" << endl
 		<< setw(10) << "STR:" << setw(3) << str << setw(3)
