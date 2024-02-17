@@ -56,14 +56,6 @@ int main()
 	int chaBonus;
 
 	//as or AS in these contexts stands for ability score
-
-	string asPrimeText = "please assign this score";
-	string strPromptText = "          STR: ";
-	string dexPromptText = "          DEX: ";
-	string conPromptText = "          CON: ";
-	string intPromptText = "          INT: ";
-	string wisPromptText = "          WIS: ";
-	string chaPromptText = "          CHA: ";
 	//define input constants for the programs min and max values
 
 	const int PROF_MIN_INPUT = 1; // Proficiency bonus input minimum

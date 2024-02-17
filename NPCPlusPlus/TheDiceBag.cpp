@@ -2,6 +2,8 @@
 #include <cmath>
 #include <iostream>
 #include <string>
+#include <thread>
+#include <chrono>
 #include "TheDiceBag.H"
 /// <summary>
 /// This is the dicebag. 
@@ -88,8 +90,8 @@ using namespace std;
 			else {
 				cout << "rolling your " << (i + 1) << "th score" << endl;
 			}
-			return std::vector<int>();
 		}
+		return result;
 	}
 
 	int Dice::RollHP(int maxHitDie, int numberOfDice, int conBonus)
@@ -132,7 +134,6 @@ using namespace std;
 			IntakeAbilityScore(AS_MIN_INPUT, AS_MAX_INPUT, wis, wisBonus, asPrimeText, wisPromptText);
 			IntakeAbilityScore(AS_MIN_INPUT, AS_MAX_INPUT, cha, chaBonus, asPrimeText, chaPromptText);
 		}
-	}
 
 	int UI::RecieveIntegerInput(string primeText, string promptText)
 	{

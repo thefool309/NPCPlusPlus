@@ -1,7 +1,7 @@
 #include <string>
 #include <vector>
 
-#include "TheDiceBag.cpp"
+#include "TheDiceBag.h"
 
 using namespace std;
 class Character {
