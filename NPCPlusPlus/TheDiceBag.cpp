@@ -72,8 +72,6 @@ private:
 				cout << "Try again! \n";
 			}
 		}
-		
-		
 		return result;				//return result
 	}
 };
