@@ -16,7 +16,7 @@
 #include <iomanip>
 #include <limits>
 
-#include "TheDiceBag.cpp"
+#include "TheDiceBag.h"
 using namespace std;
 
 int main()
@@ -76,9 +76,6 @@ int main()
 	string chaPromptText = "          CHA: ";
 	//define input constants for the programs min and max values
 
-	const int AS_MIN_INPUT = 8; //ability score input minimum
-	const int AS_MAX_INPUT = 20; // ability score input maximum
-
 	const int PROF_MIN_INPUT = 1; // Proficiency bonus input minimum
 	const int PROF_MAX_INPUT = 6; // proficiency bonus input maximum
 
@@ -92,23 +89,7 @@ int main()
 	const int MISC_ATTACK_BONUS_MAX = 10; //highest input for misc attack mods
 
 	//take user input on where they would like to assign these scores
-	str = UI::VerifyIntegerInput(AS_MIN_INPUT, AS_MAX_INPUT , asPrimeText, strPromptText); // strength
-	strBonus = Dice::ASModifier(str);
-
-	dex = UI::VerifyIntegerInput(AS_MIN_INPUT, AS_MAX_INPUT, asPrimeText, dexPromptText); // dexterity
-	dexBonus = Dice::ASModifier(dex);
-
-	con = UI::VerifyIntegerInput(AS_MIN_INPUT, AS_MAX_INPUT, asPrimeText, conPromptText);	// constitution   
-	conBonus = Dice::ASModifier(con);
-
-	intel = UI::VerifyIntegerInput(AS_MIN_INPUT, AS_MAX_INPUT, asPrimeText, intPromptText); // intelligence
-	intelBonus = Dice::ASModifier(intel);
-
-	wis = UI::VerifyIntegerInput(AS_MIN_INPUT, AS_MAX_INPUT, asPrimeText, wisPromptText);	// wisdom
-	wisBonus = Dice::ASModifier(wis);
-
-	cha = UI::VerifyIntegerInput(AS_MIN_INPUT, AS_MAX_INPUT, asPrimeText, chaPromptText);	// charisma
-	chaBonus = Dice::ASModifier(cha);
+	UI::TakeAllAbilityScores(str, dex, con, wis, intel, cha, strBonus, dexBonus, conBonus, intelBonus, wisBonus, chaBonus);
 
 	UI::ClearConsole();
 
