@@ -16,7 +16,7 @@
 #include <iomanip>
 #include <limits>
 
-#include "TheDiceBag.cpp"
+#include "TheDiceBag.h"
 using namespace std;
 
 int main()

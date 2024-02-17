@@ -2,11 +2,7 @@
 #include <cmath>
 #include <iostream>
 #include <string>
-#include <chrono>
-#include <thread>
 #include "TheDiceBag.H"
-
-
 /// <summary>
 /// This is the dicebag. 
 /// Where we store our most useful tools as dungeon master.
@@ -33,8 +29,6 @@ using namespace std;
 
 		return ASBonus;
 	}
-
-
 
 	int UI::VerifyIntegerInput(int userInputMin, int userInputMax, string primeText, string promptText)
 	{
@@ -155,6 +149,8 @@ using namespace std;
 				result = stoi(input);
 				inputIsInt = true;
 			}
+			catch (...) {
+				cout << "Try again! \n";
 			}
 		}
 		return result;				//return result
