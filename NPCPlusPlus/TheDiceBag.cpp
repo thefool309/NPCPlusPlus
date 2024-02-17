@@ -1,6 +1,7 @@
 #include <ctime>
 #include <cmath>
 #include <iostream>
+#include <string>
 /// <summary>
 /// This is the dicebag. 
 /// Where we store our most useful tools as dungeon master.
@@ -55,10 +56,24 @@ public:
 private:
 	static int RecieveIntegerInput(string primeText, string promptText) {
 		int result;					//declare integer result
-		cout << primeText << endl;	//print primeText
-		cout << promptText;			//print promptText
-		cin >> result;				//intake result
-		cout << endl;				//endline
+		string input;
+				
+		bool inputIsInt = false;
+		while (!inputIsInt){
+			cout << primeText << endl;	//print primeText
+			cout << promptText;			//print promptText
+			getline(cin, input);				//intake result
+			cout << endl;		//endline
+			try {
+				result = stoi(input);
+				inputIsInt = true;
+			}
+			catch (...) {
+				cout << "Try again! \n";
+			}
+		}
+		
+		
 		return result;				//return result
 	}
 };
