@@ -103,10 +103,10 @@ using namespace std;
 	int UI::VerifyIntegerInput(int userInputMin, int userInputMax, string primeText, string promptText)
 	{
 		int result = 0;
-		while (result <= userInputMin || result > userInputMax) //while result is less than or equal to min or greater than max
+		while (result < userInputMin || result > userInputMax) //while result is less than or equal to min or greater than max
 		{										//recieve input from the user
 			result = UI::RecieveIntegerInput(primeText, promptText);
-			if (result <= userInputMin || result > userInputMax) {	//if condition is still true 
+			if (result < userInputMin || result > userInputMax) {	//if condition is still true 
 				cout << "Try again! \n";   //inform the user to try again
 			}
 			else {	//otherwise Inform the user to move forward
