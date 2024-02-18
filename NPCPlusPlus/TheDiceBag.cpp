@@ -8,7 +8,8 @@
 /// <summary>
 /// This is the dicebag. 
 /// Where we store our most useful tools as dungeon master.
-/// Use it wisely, these are already employed through the program
+/// Use it wisely, these are already employed through the program.
+/// The UI and Dice class will be defined here
 /// </summary>
 using namespace std;
 
@@ -32,32 +33,28 @@ using namespace std;
 		return ASBonus;
 	}
 
-	int UI::VerifyIntegerInput(int userInputMin, int userInputMax, string primeText, string promptText)
+	int Dice::RollHP(int maxHitDie, int numberOfDice, int conBonus)
 	{
-		int result = 0;
-		while (result <= userInputMin || result > userInputMax) //while result is less than or equal to min or greater than max
-		{										//recieve input from the user
-			result = UI::RecieveIntegerInput(primeText, promptText);
-			if (result <= userInputMin || result > userInputMax) {	//if condition is still true 
-				cout << "Try again! \n";   //inform the user to try again
-			}
-			else {	//otherwise Inform the user to move forward
-				cout << "Good Job! Please move forward to the next step \n";
-			}
+		int hitpoints = maxHitDie + conBonus; // define hitpoints at first level
+		int hpPerLvl; //declare hpPerLvl this will be the hp increase per level
+		if (maxHitDie > 0 && maxHitDie <= 6) { // to remove room for user error 
+			hpPerLvl = 4;				     // these conditions are defined in a range 1-6
 		}
-		return result;
-	}
+		else if (maxHitDie > 6 && maxHitDie <= 8) { // range 6-8
+			hpPerLvl = 5;
+		}
+		else if (maxHitDie > 8 && maxHitDie <= 10) { //range 8-10
+			hpPerLvl = 6;
+		}
+		else {										 //anything other than these values will result
+			hpPerLvl = 7;							 // in hpPerLvl at max value of 7
+		}
 
-	void UI::ClearConsole()
-	{
-		cin.get();
-		cout << "\x1B[2J\x1B[H"; //Special string that clears the screen and moves the cursor to the top-left
-	}
-
-	void UI::IntakeAbilityScore(int abilityScoreMin, int abilityScoreMax, int& ability, int& bonus, std::string asPrimeText, std::string asPromptText)
-	{
-		ability = UI::VerifyIntegerInput(abilityScoreMin, abilityScoreMax, asPrimeText, asPromptText); // strength
-		bonus = Dice::ASModifier(ability);
+		//generate hitpoints with this loop
+		for (int i = 1; i < numberOfDice; i++) { // while i is less than the number of hitdice
+			hitpoints = hitpoints += (conBonus + hpPerLvl); // add conbonus and hpPerLvl to hitpoints
+		}
+		return hitpoints;
 	}
 
 	std::vector<int> Dice::RollAS() {
@@ -94,28 +91,32 @@ using namespace std;
 		return result;
 	}
 
-	int Dice::RollHP(int maxHitDie, int numberOfDice, int conBonus)
+	int UI::VerifyIntegerInput(int userInputMin, int userInputMax, string primeText, string promptText)
 	{
-		int hitpoints = maxHitDie + conBonus; // define hitpoints at first level
-		int hpPerLvl; //declare hpPerLvl this will be the hp increase per level
-		if (maxHitDie > 0 && maxHitDie <= 6) { // to remove room for user error 
-			hpPerLvl = 4;				     // these conditions are defined in a range 1-6
+		int result = 0;
+		while (result <= userInputMin || result > userInputMax) //while result is less than or equal to min or greater than max
+		{										//recieve input from the user
+			result = UI::RecieveIntegerInput(primeText, promptText);
+			if (result <= userInputMin || result > userInputMax) {	//if condition is still true 
+				cout << "Try again! \n";   //inform the user to try again
+			}
+			else {	//otherwise Inform the user to move forward
+				cout << "Good Job! Please move forward to the next step \n";
+			}
 		}
-		else if (maxHitDie > 6 && maxHitDie <= 8) { // range 6-8
-			hpPerLvl = 5;
-		}
-		else if (maxHitDie > 8 && maxHitDie <= 10) { //range 8-10
-			hpPerLvl = 6;
-		}
-		else {										 //anything other than these values will result
-			hpPerLvl = 7;							 // in hpPerLvl at max value of 7
-		}
+		return result;
+	}
 
-		//generate hitpoints with this loop
-		for (int i = 1; i < numberOfDice; i++) { // while i is less than the number of hitdice
-			hitpoints = hitpoints += (conBonus + hpPerLvl); // add conbonus and hpPerLvl to hitpoints
-		}
-		return hitpoints;
+	void UI::ClearConsole()
+	{
+		cin.get();
+		cout << "\x1B[2J\x1B[H"; //Special string that clears the screen and moves the cursor to the top-left
+	}
+
+	void UI::IntakeAbilityScore(int abilityScoreMin, int abilityScoreMax, int& ability, int& bonus, std::string asPrimeText, std::string asPromptText)
+	{
+		ability = UI::VerifyIntegerInput(abilityScoreMin, abilityScoreMax, asPrimeText, asPromptText); // strength
+		bonus = Dice::ASModifier(ability);
 	}
 
 	void UI::TakeAllAbilityScores(int& str, int& dex, int& con, int& wis, int& intel, int& cha, int& strBonus, int& dexBonus, int& conBonus, int& intBonus, int& wisBonus, int& chaBonus)
