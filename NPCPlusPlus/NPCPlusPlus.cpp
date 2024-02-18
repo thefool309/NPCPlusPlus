@@ -31,7 +31,7 @@ int main()
 	vector<int> scores = Dice::RollAS();
 	//print the ability scores back
 	for (int i = 0; i < scores.size(); i++) {
-		cout << "Ability Score rolled: " << scores[i] << endl;
+		cout << "Score Rolled: " << scores[i] << endl;
 	}
 	
 	
@@ -58,16 +58,16 @@ int main()
 	//as or AS in these contexts stands for ability score
 	//define input constants for the programs min and max values
 
-	const int PROF_MIN_INPUT = 1; // Proficiency bonus input minimum
+	const int PROF_MIN_INPUT = 2; // Proficiency bonus input minimum
 	const int PROF_MAX_INPUT = 6; // proficiency bonus input maximum
 
-	const int NUMBER_OF_DICE_MIN = 0; //lowest input for numberOfDice
+	const int NUMBER_OF_DICE_MIN = 1; //lowest input for numberOfDice
 	const int NUMBER_OF_DICE_MAX = 20;//Highest input for numberOfDice
 
-	const int HITDIE_INPUT_MIN = 0; //lowest input for maxHitDie
+	const int HITDIE_INPUT_MIN = 1; //lowest input for maxHitDie
 	const int HITDIE_INPUT_MAX = 12; //highest input for maxHitDie
 
-	const int MISC_ATTACK_BONUS_MIN = -1; //lowest input for misc attack mods
+	const int MISC_ATTACK_BONUS_MIN = 0; //lowest input for misc attack mods
 	const int MISC_ATTACK_BONUS_MAX = 10; //highest input for misc attack mods
 
 	//take user input on where they would like to assign these scores
@@ -85,7 +85,7 @@ int main()
 	UI::ClearConsole();
 
 	int miscPhysAttackMod;
-	string miscAttackPrime = "Any other bonuses to physical attacks? ";
+	string miscAttackPrime = "Any other bonuses to physical attacks? (0 for none)";
 	string miscAttackPrompt = "Miscellaneous Attack Modifier: ";		//intake user input on misc attack mods
 	miscPhysAttackMod = UI::VerifyIntegerInput(MISC_ATTACK_BONUS_MIN, MISC_ATTACK_BONUS_MAX,
 												miscAttackPrime, miscAttackPrompt);	
@@ -97,25 +97,23 @@ int main()
 	string scPrime = "1- WIS\n2- INT\n3- CHA\n";
 	string scPrompt = "Input the number corresponding with your spell casting ability: ";
 
-	short SCinput = UI::VerifyIntegerInput(0, 4, scPrime, scPrompt);
+	short scInput = UI::VerifyIntegerInput(0, 4, scPrime, scPrompt);
 
-	UI::ClearConsole();
-
-	int SCattackBonus;
+	int scAttackBonus;
 	int spellSaveDC;
 	// DC stands for Difficulty Class
-	switch (SCinput)
+	switch (scInput)
 	{
 	case 1:
-		SCattackBonus = (wisBonus + profBonus);
+		scAttackBonus = (wisBonus + profBonus);
 		spellSaveDC = (8 + wisBonus + profBonus);
 		break;
 	case 2:
-		SCattackBonus = (intelBonus + profBonus);
+		scAttackBonus = (intelBonus + profBonus);
 		spellSaveDC = (8 + intelBonus + profBonus);
 		break;
 	default:
-		SCattackBonus = (chaBonus + profBonus);
+		scAttackBonus = (chaBonus + profBonus);
 		spellSaveDC = (8 + chaBonus + profBonus);
 		break;
 	}
@@ -128,7 +126,7 @@ int main()
 
 	//user inputs maxHitDie and program verifies that it is in range
 	maxHitDie = UI::VerifyIntegerInput(HITDIE_INPUT_MIN, HITDIE_INPUT_MAX, hitdiePrime, hitdiePrompt);
-	
+
 	UI::ClearConsole();
 
 	int numberOfDice = 0;
@@ -169,7 +167,7 @@ int main()
 		<< "STR based Attack Bonus: " << strBasedAttackBonus << endl
 		<< "DEX based Attack Bonus: " << dexBasedAttackBonus << endl << endl << endl;
 
-	cout << "Your Spell attack bonus: " << SCattackBonus << endl
+	cout << "Your Spell attack bonus: " << scAttackBonus << endl
 		<< "Your Spell Save DC: " << spellSaveDC << endl;
 
 	cin.get();
