@@ -89,20 +89,15 @@ int main()
 	string miscAttackPrompt = "Miscellaneous Attack Modifier: ";		//intake user input on misc attack mods
 	miscPhysAttackMod = UI::VerifyIntegerInput(MISC_ATTACK_BONUS_MIN, MISC_ATTACK_BONUS_MAX,
 												miscAttackPrime, miscAttackPrompt);	
-	
-	UI::ClearConsole();
 
 	int strBasedAttackBonus = strBonus + profBonus + miscPhysAttackMod; //str based attack bonus
 	int dexBasedAttackBonus = dexBonus + profBonus + miscPhysAttackMod; //dex based attack bonus
 
 	// in this context SC is Spell Casting abbreviated
-	cout << "1- WIS" << endl
-		<< "2- INT" << endl
-		<< "3- CHA" << endl
-		<< "Input the number corresponding with your spell casting ability: ";
+	string scPrime = "1- WIS\n2- INT\n3- CHA\n";
+	string scPrompt = "Input the number corresponding with your spell casting ability: ";
 
-	short SCinput;
-	cin >> SCinput;
+	short SCinput = UI::VerifyIntegerInput(0, 4, scPrime, scPrompt);
 
 	UI::ClearConsole();
 

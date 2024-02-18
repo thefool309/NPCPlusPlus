@@ -91,6 +91,15 @@ using namespace std;
 		return result;
 	}
 
+	std::string UI::GetString(std::string primeText, std::string promptText)
+	{
+		string result;
+		cout << primeText << "\n"
+			 << promptText;
+		getline(cin, result);
+		return result;
+	}
+
 	int UI::VerifyIntegerInput(int userInputMin, int userInputMax, string primeText, string promptText)
 	{
 		int result = 0;
@@ -101,7 +110,7 @@ using namespace std;
 				cout << "Try again! \n";   //inform the user to try again
 			}
 			else {	//otherwise Inform the user to move forward
-				cout << "Good Job! Please move forward to the next step \n";
+				cout << "Please move forward to the next step \n";
 			}
 		}
 		return result;
@@ -109,6 +118,7 @@ using namespace std;
 
 	void UI::ClearConsole()
 	{
+		cout << "Press any key to continue...";
 		cin.get();
 		cout << "\x1B[2J\x1B[H"; //Special string that clears the screen and moves the cursor to the top-left
 	}
