@@ -118,21 +118,21 @@ using namespace std;
 		return hitpoints;
 	}
 
-		void UI::TakeAllAbilityScores(int& str, int& dex, int& con, int& wis, int& intel, int& cha, int& strBonus, int& dexBonus, int& conBonus, int& intBonus, int& wisBonus, int& chaBonus)
-		{
-			string asPrimeText = "please assign this score";
-			string strPromptText = "          STR: ";
-			string dexPromptText = "          DEX: ";
-			string conPromptText = "          CON: ";
-			string intPromptText = "          INT: ";
-			string wisPromptText = "          WIS: ";
-			string chaPromptText = "          CHA: ";
-			IntakeAbilityScore(AS_MIN_INPUT, AS_MAX_INPUT, str, strBonus, asPrimeText, strPromptText);
-			IntakeAbilityScore(AS_MIN_INPUT, AS_MAX_INPUT, dex, dexBonus, asPrimeText, dexPromptText);
-			IntakeAbilityScore(AS_MIN_INPUT, AS_MAX_INPUT, con, conBonus, asPrimeText, conPromptText);
-			IntakeAbilityScore(AS_MIN_INPUT, AS_MAX_INPUT, intel, intBonus, asPrimeText, intPromptText);
-			IntakeAbilityScore(AS_MIN_INPUT, AS_MAX_INPUT, wis, wisBonus, asPrimeText, wisPromptText);
-			IntakeAbilityScore(AS_MIN_INPUT, AS_MAX_INPUT, cha, chaBonus, asPrimeText, chaPromptText);
+	void UI::TakeAllAbilityScores(int& str, int& dex, int& con, int& wis, int& intel, int& cha, int& strBonus, int& dexBonus, int& conBonus, int& intBonus, int& wisBonus, int& chaBonus)
+	{
+		string asPrimeText = "please assign this score";
+		string strPromptText = "          STR: ";
+		string dexPromptText = "          DEX: ";
+		string conPromptText = "          CON: ";
+		string intPromptText = "          INT: ";
+		string wisPromptText = "          WIS: ";
+		string chaPromptText = "          CHA: ";
+		IntakeAbilityScore(AS_MIN_INPUT, AS_MAX_INPUT, str, strBonus, asPrimeText, strPromptText);
+		IntakeAbilityScore(AS_MIN_INPUT, AS_MAX_INPUT, dex, dexBonus, asPrimeText, dexPromptText);
+		IntakeAbilityScore(AS_MIN_INPUT, AS_MAX_INPUT, con, conBonus, asPrimeText, conPromptText);
+		IntakeAbilityScore(AS_MIN_INPUT, AS_MAX_INPUT, intel, intBonus, asPrimeText, intPromptText);
+		IntakeAbilityScore(AS_MIN_INPUT, AS_MAX_INPUT, wis, wisBonus, asPrimeText, wisPromptText);
+		IntakeAbilityScore(AS_MIN_INPUT, AS_MAX_INPUT, cha, chaBonus, asPrimeText, chaPromptText);
 		}
 
 	int UI::RecieveIntegerInput(string primeText, string promptText)
