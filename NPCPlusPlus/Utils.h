@@ -5,9 +5,9 @@
 
 class Utils {
 
-	bool IsPrefix(std::string prefix, std::string comp);
-	AbilityScore SpellcastingAbility();
+	static bool IsPrefix(std::string prefix, std::string comp);
+	static AbilityScore SpellcastingAbility();
 public:
-	void DetermineSCAbility(int& scAttackBonus, int& spellSaveDC, int& profBonus, int& chaBonus, int& wisBonus, int& intelBonus);
+	static void DetermineSCAbility(int& scAttackBonus, int& spellSaveDC, int& profBonus, int& chaBonus, int& wisBonus, int& intelBonus);
 
 };

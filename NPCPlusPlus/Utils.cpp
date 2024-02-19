@@ -1,3 +1,5 @@
+#include<iostream>
+
 #include "Utils.h"
 #include "TheDiceBag.h"
 
@@ -17,11 +19,12 @@ AbilityScore Utils::SpellcastingAbility()
 {
 	AbilityScore result;
 	std::string userInput;
-	std::string scPrime = "1- WIS\n2- INT\n3- CHA\n";
-	std::string scPrompt = "Input the number corresponding with your spell casting ability: ";
+	std::string scPrime = "WIS\nINT\nCHA\n";
+	std::string scPrompt = "Input your spell casting ability: ";
 	bool wisCheck = false;
 	bool intCheck = false;
 	bool chaCheck = false;
+	bool scDefined = false;
 		do {
 			userInput = UI::GetString(scPrime, scPrompt);
 			intCheck = IsPrefix(userInput, "intelligence");
@@ -29,14 +32,20 @@ AbilityScore Utils::SpellcastingAbility()
 			chaCheck = IsPrefix(userInput, "charisma");
 			if (wisCheck) {
 				result = Wisdom;
+				scDefined = true;
 			}
 			else if (intCheck) {
 				result = Intelligence;
+				scDefined = true;
 			}
 			else if (chaCheck) {
 				result = Charisma;
+				scDefined = true;
 			}
-		} while (!wisCheck || !intCheck || !chaCheck);
+			else {
+				std::cout << "Invalid Input, please try again!\n";
+			}
+		} while (!scDefined);
 	
 	return result;
 }

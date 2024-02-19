@@ -17,6 +17,7 @@
 #include <limits>
 
 #include "TheDiceBag.h"
+#include "Utils.h"
 using namespace std;
 
 int main()
@@ -94,29 +95,14 @@ int main()
 	int dexBasedAttackBonus = dexBonus + profBonus + miscPhysAttackMod; //dex based attack bonus
 
 	// in this context SC is Spell Casting abbreviated
-	string scPrime = "1- WIS\n2- INT\n3- CHA\n";
-	string scPrompt = "Input the number corresponding with your spell casting ability: ";
-
-	short scInput = UI::VerifyIntegerInput(0, 4, scPrime, scPrompt);
+	
 
 	int scAttackBonus;
 	int spellSaveDC;
 	// DC stands for Difficulty Class
-	switch (scInput)
-	{
-	case 1:
-		scAttackBonus = (wisBonus + profBonus);
-		spellSaveDC = (8 + wisBonus + profBonus);
-		break;
-	case 2:
-		scAttackBonus = (intelBonus + profBonus);
-		spellSaveDC = (8 + intelBonus + profBonus);
-		break;
-	default:
-		scAttackBonus = (chaBonus + profBonus);
-		spellSaveDC = (8 + chaBonus + profBonus);
-		break;
-	}
+	Utils::DetermineSCAbility(scAttackBonus, spellSaveDC, profBonus, chaBonus, wisBonus, intelBonus);
+
+	UI::ClearConsole();
 
 	int maxHitDie = 0;
 	//define prompts for the ui input method
