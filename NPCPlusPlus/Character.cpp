@@ -70,6 +70,7 @@ class Character {
 		mIntBonus = Dice::ASModifier(mIntelligence);
 		mChaBonus = Dice::ASModifier(mCharisma);
 
+		
 		mProfBonus = 2;
 
 		mArmorClass = 10 + mDexBonus;
@@ -117,4 +118,40 @@ class Character {
 	int GetCha() {
 		return mCharisma;
 	}
+
+	void SetStr(int input) {
+		mStrength = input;
+	}
+
+	void SetDex(int input) {
+		mDexterity = input;
+	}
+
+	void SetCon(int input) {
+		mConstitution = input;
+	}
+
+	void SetIntel(int input) {
+		mIntelligence = input;
+	}
+
+	void SetWis(int input) {
+		mWisdom = input;
+	}
+
+	void SetCha(int input) {
+		mCharisma = input;
+	}
+
+	void DetermineBonuses() {
+		mStrBonus = Dice::ASModifier(mStrength);
+		mDexBonus = Dice::ASModifier(mDexterity);
+		mConBonus = Dice::ASModifier(mConstitution);
+		mWisBonus = Dice::ASModifier(mWisdom);
+		mIntBonus = Dice::ASModifier(mIntelligence);
+		mChaBonus = Dice::ASModifier(mCharisma);
+	}
+
+
+
 };
