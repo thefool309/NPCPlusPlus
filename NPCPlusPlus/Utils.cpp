@@ -19,7 +19,7 @@ AbilityScore Utils::SpellcastingAbility()
 {
 	AbilityScore result;
 	std::string userInput;
-	std::string scPrime = "WIS\nINT\nCHA\n";
+	std::string scPrime = "INT\nWIS\nCHA\n";
 	std::string scPrompt = "Input your spell casting ability: ";
 	bool wisCheck = false;
 	bool intCheck = false;
