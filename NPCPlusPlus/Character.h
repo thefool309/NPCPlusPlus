@@ -10,7 +10,7 @@ class Character
 {
 
 		//character info
-		string characterName;
+		string mCharacterName;
 
 		//ability scores
 		int mStrength = 10;
@@ -42,14 +42,10 @@ class Character
 
 		bool mSaveProfCha = false;
 
-
-		//Saving throw proficiency vector
-
-		//skill proficiencies
-
-
 		//default constructor
 		Character() {
+			mCharacterName = "Your Name Here";
+
 			mStrength = 10;
 			mDexterity = 10;
 			mConstitution = 10;
@@ -67,7 +63,6 @@ class Character
 
 			mStrAttackMod = mStrBonus + mProfBonus;
 			mDexAttackMod = mDexBonus + mProfBonus;
-
 		}
 		//parameter constructor
 
@@ -119,7 +114,11 @@ class Character
 		}
 
 		int ArmorClass() const {
+			return mArmorClass;
+		}
 
+		string Name() const {
+			return mCharacterName;
 		}
 
 		void Str(int input) {
@@ -146,14 +145,15 @@ class Character
 			mCharisma = input;
 		}
 
-		void DetermineBonuses() {
-			mStrBonus = Dice::ASModifier(mStrength);
-			mDexBonus = Dice::ASModifier(mDexterity);
-			mConBonus = Dice::ASModifier(mConstitution);
-			mWisBonus = Dice::ASModifier(mWisdom);
-			mIntBonus = Dice::ASModifier(mIntelligence);
-			mChaBonus = Dice::ASModifier(mCharisma);
+		void ArmorClass(int newArmorClass) {
+			mArmorClass = newArmorClass;
 		}
+
+		void Name(string newName) {
+			mCharacterName = newName;
+		}
+
+		void DetermineBonuses();
 
 
 
