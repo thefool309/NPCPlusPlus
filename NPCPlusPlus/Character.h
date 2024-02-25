@@ -57,15 +57,7 @@ class Character
 			mIntelligence = 10;
 			mCharisma = 10;
 
-			mStrBonus = Dice::ASModifier(mStrength);
-			mDexBonus = Dice::ASModifier(mDexterity);
-			mConBonus = Dice::ASModifier(mConstitution);
-			mWisBonus = Dice::ASModifier(mWisdom);
-			mIntBonus = Dice::ASModifier(mIntelligence);
-			mChaBonus = Dice::ASModifier(mCharisma);
-
-
-
+			DetermineBonuses();
 
 			mProfBonus = 2;
 
@@ -92,7 +84,9 @@ class Character
 				  mIntelligence(intelligence),
 				  mWisdom(wisdom),
 				  mCharisma(charisma) {
+
 					DetermineBonuses();
+
 					mArmorClass = 10 + mDexBonus;
 					mHitDie = 4;
 					mHitPoints = Dice::RollHP(mHitDie, mLvl, mConBonus);
