@@ -27,8 +27,7 @@ AbilityScore Utils::SpellcastingAbility()
 	bool chaCheck = false;
 	bool scDefined = false;
 		do {
-			userInput = 
-UI::GetString(scPrime, scPrompt);
+			userInput = UI::GetString(scPrime, scPrompt);
 			intCheck = IsPrefix(userInput, "intelligence");
 			wisCheck = IsPrefix(userInput, "wisdom");
 			chaCheck = IsPrefix(userInput, "charisma");
