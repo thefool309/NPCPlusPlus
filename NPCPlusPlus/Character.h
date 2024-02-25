@@ -80,80 +80,75 @@ class Character
 		//parameter constructor
 
 		Character(int strength,
-			int dexterity,
-			int constitution,
-			int wisdom,
-			int intelligence,
-			int charisma,
-			int profBonus) : mStrength(strength),
-			mDexterity(dexterity),
-			mConstitution(constitution),
-			mIntelligence(intelligence),
-			mWisdom(wisdom),
-			mCharisma(charisma) {
-			mStrBonus = Dice::ASModifier(mStrength);
-			mDexBonus = Dice::ASModifier(mDexterity);
-			mConBonus = Dice::ASModifier(mConstitution);
-			mWisBonus = Dice::ASModifier(mWisdom);
-			mIntBonus = Dice::ASModifier(mIntelligence);
-			mChaBonus = Dice::ASModifier(mCharisma);
+				  int dexterity,
+				  int constitution,
+			      int intelligence,
+				  int wisdom,
+				  int charisma,
+				  int profBonus) : 
+				  mStrength(strength),
+				  mDexterity(dexterity),
+				  mConstitution(constitution),
+				  mIntelligence(intelligence),
+				  mWisdom(wisdom),
+				  mCharisma(charisma) {
+					DetermineBonuses();
+					mArmorClass = 10 + mDexBonus;
+					mHitDie = 4;
+					mHitPoints = Dice::RollHP(mHitDie, mLvl, mConBonus);
 
-			mArmorClass = 10 + mDexBonus;
-			mHitDie = 4;
-			mHitPoints = Dice::RollHP(mHitDie, mLvl, mConBonus);
-
-			mStrAttackMod = mStrBonus + mProfBonus;
-			mDexAttackMod = mDexBonus + mProfBonus;
+					mStrAttackMod = mStrBonus + mProfBonus;
+					mDexAttackMod = mDexBonus + mProfBonus;
 		}
-		int GetStr() const {
+		int Str() const {
 			return mStrength;
 		}
 
-		int GetDex() const {
+		int Dex() const {
 			return mDexterity;
 		}
 
-		int GetCon() const {
+		int Con() const {
 			return mConstitution;
 		}
 
-		int GetWis() const {
+		int Wis() const {
 			return mWisdom;
 		}
 
-		int GetIntel() const {
+		int Intel() const {
 			return mIntelligence;
 		}
 
-		int GetCha() const {
+		int Cha() const {
 			return mCharisma;
 		}
 
-		int GetArmorClass() const {
+		int ArmorClass() const {
 
 		}
 
-		void SetStr(int input) {
+		void Str(int input) {
 			mStrength = input;
 		}
 
-		void SetDex(int input) {
+		void Dex(int input) {
 			mDexterity = input;
 		}
 
-		void SetCon(int input) {
+		void Con(int input) {
 			mConstitution = input;
 		}
 
-		void SetIntel(int input) {
+		void Intel(int input) {
 			mIntelligence = input;
 		}
 
-		void SetWis(int input) {
+		void Wis(int input) {
 			mWisdom = input;
 		}
 
-		void SetCha(int input) {
+		void Cha(int input) {
 			mCharisma = input;
 		}
 
