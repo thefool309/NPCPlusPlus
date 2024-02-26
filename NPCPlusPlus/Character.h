@@ -70,6 +70,7 @@ class Character
 				  int wisdom,
 				  int charisma,
 				  int lvl,
+				  int hitDie,
 				  string name) : 
 				  mStrength(strength),
 				  mDexterity(dexterity),
@@ -78,13 +79,14 @@ class Character
 				  mWisdom(wisdom),
 				  mCharisma(charisma),
 				  mLvl(lvl),
-				  mCharacterName(name) 
+				  mCharacterName(name), 
+				  mHitDie(hitDie)
 		{
-
 			DetermineBonuses();
 
+			DetermineProfBonus();
+
 			mArmorClass = 10 + mDexBonus;
-			mHitDie = 4;
 			mHitPoints = Dice::RollHP(mHitDie, mLvl, mConBonus);
 
 			mStrAttackMod = mStrBonus + mProfBonus;
