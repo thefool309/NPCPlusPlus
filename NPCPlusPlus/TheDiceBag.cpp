@@ -9,7 +9,7 @@
 /// This is the dicebag. 
 /// Where we store our most useful tools as dungeon master.
 /// Use it wisely, these are already employed through the program.
-/// The UI and Dice class will be defined here
+/// The Dice class will be defined here
 /// </summary>
 using namespace std;
 
