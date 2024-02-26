@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <vector>
+#include <memory>
 
 #include "TheDiceBag.h"
 
@@ -54,10 +55,11 @@ public:
 			mWisdom = 10;
 			mIntelligence = 10;
 			mCharisma = 10;
-
-			DetermineBonuses();
-			mProfBonus = 2;
+			
 			mLvl = 1;
+			
+			DetermineBonuses();
+			DetermineProfBonus();
 
 			mArmorClass = 10 + mDexBonus;
 			mHitDie = 4;
@@ -69,14 +71,30 @@ public:
 			mSpellAttack = mWisBonus + mProfBonus;
 			mIsCaster = false;
 		}
-		//parameter constructor
-
-		Character(int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma, int lvl, int hitDie, string name) :
-				  mStrength(strength), mDexterity(dexterity), mConstitution(constitution), mIntelligence(intelligence), mWisdom(wisdom), mCharisma(charisma), mLvl(lvl), mHitDie(hitDie), mCharacterName(name)
+		
+		//random leveled character constructor
+		Character(int strength,
+				  int dexterity,
+				  int constitution,
+			      int intelligence,
+				  int wisdom,
+				  int charisma,
+				  int lvl,
+				  int hitDie,
+				  string name) : 
+				  mStrength(strength),
+				  mDexterity(dexterity),
+				  mConstitution(constitution),
+				  mIntelligence(intelligence),
+				  mWisdom(wisdom),
+				  mCharisma(charisma),
+				  mLvl(lvl),
+				  mCharacterName(name), 
+				  mHitDie(hitDie)
 		{
-
 			DetermineBonuses();
 			DetermineProfBonus();
+
 			mArmorClass = 10 + mDexBonus;
 			mHitPoints = Dice::RollHP(mHitDie, mLvl, mConBonus);
 
@@ -215,9 +233,5 @@ public:
 		void DetermineBonuses();
 		void DetermineProfBonus();
 		void LvlUp();
-
-
-
-
 };
 
