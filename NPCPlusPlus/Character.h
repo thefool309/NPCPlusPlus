@@ -38,9 +38,6 @@ class Character
 		int mDexAttackMod = 0;
 
 		int mLvl = 0;
-		//saving Throws
-
-		bool mSaveProfCha = false;
 
 		//default constructor
 		Character() {
@@ -72,23 +69,28 @@ class Character
 			      int intelligence,
 				  int wisdom,
 				  int charisma,
-				  int profBonus) : 
+				  int lvl,
+				  string name) : 
 				  mStrength(strength),
 				  mDexterity(dexterity),
 				  mConstitution(constitution),
 				  mIntelligence(intelligence),
 				  mWisdom(wisdom),
-				  mCharisma(charisma) {
+				  mCharisma(charisma),
+				  mLvl(lvl),
+				  mCharacterName(name) 
+		{
 
-					DetermineBonuses();
+			DetermineBonuses();
 
-					mArmorClass = 10 + mDexBonus;
-					mHitDie = 4;
-					mHitPoints = Dice::RollHP(mHitDie, mLvl, mConBonus);
+			mArmorClass = 10 + mDexBonus;
+			mHitDie = 4;
+			mHitPoints = Dice::RollHP(mHitDie, mLvl, mConBonus);
 
-					mStrAttackMod = mStrBonus + mProfBonus;
-					mDexAttackMod = mDexBonus + mProfBonus;
+			mStrAttackMod = mStrBonus + mProfBonus;
+			mDexAttackMod = mDexBonus + mProfBonus;
 		}
+		//getters
 		int Str() const {
 			return mStrength;
 		}
@@ -117,43 +119,54 @@ class Character
 			return mArmorClass;
 		}
 
+		int HitPoints() const {
+			return mHitPoints;
+		}
+
 		string Name() const {
 			return mCharacterName;
 		}
-
-		void Str(int input) {
-			mStrength = input;
+		//setters
+		void Str(int newStrength) {
+			mStrength = newStrength;
 		}
 
-		void Dex(int input) {
-			mDexterity = input;
+		void Dex(int newDexterity) {
+			mDexterity = newDexterity;
 		}
 
-		void Con(int input) {
-			mConstitution = input;
+		void Con(int newConstitution) {
+			mConstitution = newConstitution;
 		}
 
-		void Intel(int input) {
-			mIntelligence = input;
+		void Intel(int newIntelligence) {
+			mIntelligence = newIntelligence;
 		}
 
-		void Wis(int input) {
-			mWisdom = input;
+		void Wis(int newWisdom) {
+			mWisdom = newWisdom;
 		}
 
-		void Cha(int input) {
-			mCharisma = input;
+		void Cha(int newCharisma) {
+			mCharisma = newCharisma;
 		}
 
 		void ArmorClass(int newArmorClass) {
 			mArmorClass = newArmorClass;
 		}
 
+		void HitPoints(int newHitPoints) {
+			mHitPoints = newHitPoints;
+		}
+
 		void Name(string newName) {
 			mCharacterName = newName;
 		}
 
+		//various behaviors for the character object
 		void DetermineBonuses();
+		void DetermineProfBonus();
+		void LvlUp();
 
 
 
