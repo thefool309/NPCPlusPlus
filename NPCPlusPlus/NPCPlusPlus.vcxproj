@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Barbarian.cpp" />
     <ClCompile Include="Character.cpp" />
     <ClCompile Include="NPCPlusPlus.cpp" />
     <ClCompile Include="TheDiceBag.cpp" />
@@ -134,6 +135,7 @@
     <ClCompile Include="Utils.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Barbarian.h" />
     <ClInclude Include="Character.h" />
     <ClInclude Include="enums.h" />
     <ClInclude Include="TheDiceBag.h" />

@@ -8,7 +8,7 @@ using namespace std;
 
 class Character
 {
-
+private:
 		//character info
 		string mCharacterName;
 
@@ -38,7 +38,7 @@ class Character
 		int mDexAttackMod = 0;
 
 		int mLvl = 0;
-
+public:
 		//default constructor
 		Character() {
 			mCharacterName = "Your Name Here";
@@ -113,6 +113,10 @@ class Character
 
 		int Cha() const {
 			return mCharisma;
+		}
+
+		int Lvl() const {
+			return mLvl;
 		}
 
 		int ArmorClass() const {
