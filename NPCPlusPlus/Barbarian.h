@@ -12,13 +12,15 @@ class Barbarian :
 		int wisdom,
 		int charisma,
 		int lvl,
+		int hitDie,
 		string name) : Character(strength,
 								dexterity, 
 								constitution,
 								intelligence,
 								wisdom,
 								charisma, 
-								lvl, name) {
+								lvl, hitDie, 
+								name) {
 		DetermineRage();
 	}
 

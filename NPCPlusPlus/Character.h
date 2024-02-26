@@ -64,21 +64,23 @@ public:
 		//parameter constructor
 
 		Character(int strength,
-				  int dexterity,
-				  int constitution,
-			      int intelligence,
-				  int wisdom,
-				  int charisma,
-				  int lvl,
-				  string name) : 
-				  mStrength(strength),
-				  mDexterity(dexterity),
-				  mConstitution(constitution),
-				  mIntelligence(intelligence),
-				  mWisdom(wisdom),
-				  mCharisma(charisma),
-				  mLvl(lvl),
-				  mCharacterName(name) 
+			int dexterity,
+			int constitution,
+			int intelligence,
+			int wisdom,
+			int charisma,
+			int lvl,
+			int hitDie,
+			string name) :
+			mStrength(strength),
+			mDexterity(dexterity),
+			mConstitution(constitution),
+			mIntelligence(intelligence),
+			mWisdom(wisdom),
+			mCharisma(charisma),
+			mLvl(lvl),
+			mCharacterName(name),
+			mHitDie(hitDie)
 		{
 
 			DetermineBonuses();
@@ -123,6 +125,10 @@ public:
 			return mArmorClass;
 		}
 
+		int HitDie() const {
+			return mHitDie:
+		}
+
 		int HitPoints() const {
 			return mHitPoints;
 		}
@@ -157,6 +163,10 @@ public:
 
 		void ArmorClass(int newArmorClass) {
 			mArmorClass = newArmorClass;
+		}
+
+		void HitDie(int newHitDie) {
+			mHitDie = newHitDie;
 		}
 
 		void HitPoints(int newHitPoints) {
