@@ -30,3 +30,6 @@ void Character::LvlUp()
 	mHitPoints = Dice::RollHP(mHitDie, mLvl, mConBonus);
 	DetermineProfBonus();
 }
+
+
+

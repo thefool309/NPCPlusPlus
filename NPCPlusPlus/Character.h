@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <vector>
+#include <memory>
 
 #include "TheDiceBag.h"
 
@@ -49,10 +50,11 @@ class Character
 			mWisdom = 10;
 			mIntelligence = 10;
 			mCharisma = 10;
-
+			
+			mLvl = 1;
+			
 			DetermineBonuses();
-
-			mProfBonus = 2;
+			DetermineProfBonus();
 
 			mArmorClass = 10 + mDexBonus;
 			mHitDie = 4;
@@ -61,8 +63,8 @@ class Character
 			mStrAttackMod = mStrBonus + mProfBonus;
 			mDexAttackMod = mDexBonus + mProfBonus;
 		}
-		//parameter constructor
-
+		
+		//random leveled character constructor
 		Character(int strength,
 				  int dexterity,
 				  int constitution,
@@ -83,7 +85,6 @@ class Character
 				  mHitDie(hitDie)
 		{
 			DetermineBonuses();
-
 			DetermineProfBonus();
 
 			mArmorClass = 10 + mDexBonus;
@@ -169,9 +170,5 @@ class Character
 		void DetermineBonuses();
 		void DetermineProfBonus();
 		void LvlUp();
-
-
-
-
 };
 
