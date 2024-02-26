@@ -13,31 +13,31 @@ private:
 		string mCharacterName;
 
 		//ability scores
-		int mStrength = 10;
-		int mDexterity = 10;
-		int mConstitution = 10;
-		int mWisdom = 10;
-		int mIntelligence = 10;
-		int mCharisma = 10;
+		int mStrength;
+		int mDexterity;
+		int mConstitution;
+		int mWisdom;
+		int mIntelligence;
+		int mCharisma;
 
 		//bonuses related to each ability score
-		int mStrBonus = 0;
-		int mDexBonus = 0;
-		int mConBonus = 0;
-		int mWisBonus = 0;
-		int mIntBonus = 0;
-		int mChaBonus = 0;
+		int mStrBonus;
+		int mDexBonus;
+		int mConBonus;
+		int mWisBonus;
+		int mIntBonus;
+		int mChaBonus;
 		//prof bonus
-		int mProfBonus = 0;
+		int mProfBonus;
 		//defensive stats
-		int mArmorClass = 0;
-		int mHitPoints = 0;
-		int mHitDie = 0;
+		int mArmorClass;
+		int mHitPoints;
+		int mHitDie;
 		//physical attack modifiers
-		int mStrAttackMod = 0;
-		int mDexAttackMod = 0;
+		int mStrAttackMod;
+		int mDexAttackMod;
 
-		int mLvl = 0;
+		int mLvl;
 public:
 		//default constructor
 		Character() {
@@ -63,30 +63,13 @@ public:
 		}
 		//parameter constructor
 
-		Character(int strength,
-			int dexterity,
-			int constitution,
-			int intelligence,
-			int wisdom,
-			int charisma,
-			int lvl,
-			int hitDie,
-			string name) :
-			mStrength(strength),
-			mDexterity(dexterity),
-			mConstitution(constitution),
-			mIntelligence(intelligence),
-			mWisdom(wisdom),
-			mCharisma(charisma),
-			mLvl(lvl),
-			mCharacterName(name),
-			mHitDie(hitDie)
+		Character(int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma, int lvl, int hitDie, string name) :
+				  mStrength(strength), mDexterity(dexterity), mConstitution(constitution), mIntelligence(intelligence), mWisdom(wisdom), mCharisma(charisma), mLvl(lvl), mHitDie(hitDie), mCharacterName(name)
 		{
 
 			DetermineBonuses();
 
 			mArmorClass = 10 + mDexBonus;
-			mHitDie = 4;
 			mHitPoints = Dice::RollHP(mHitDie, mLvl, mConBonus);
 
 			mStrAttackMod = mStrBonus + mProfBonus;

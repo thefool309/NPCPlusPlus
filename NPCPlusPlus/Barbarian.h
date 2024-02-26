@@ -5,22 +5,9 @@ class Barbarian :
 {
 	int mRagePerDay;
 
-	Barbarian(int strength,
-		int dexterity,
-		int constitution,
-		int intelligence,
-		int wisdom,
-		int charisma,
-		int lvl,
-		int hitDie,
-		string name) : Character(strength,
-								dexterity, 
-								constitution,
-								intelligence,
-								wisdom,
-								charisma, 
-								lvl, hitDie, 
-								name) {
+	Barbarian(int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma, int lvl, int hitDie, string name) 
+		: Character(strength, dexterity, constitution, intelligence, wisdom, charisma,  lvl, hitDie, name)
+	{
 		DetermineRage();
 	}
 
