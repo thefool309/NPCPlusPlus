@@ -37,7 +37,12 @@ private:
 		int mStrAttackMod;
 		int mDexAttackMod;
 
+		int mSpellSaveDc;
+		int mSpellAttack;
+
 		int mLvl;
+
+		bool mIsCaster;
 public:
 		//default constructor
 		Character() {
@@ -51,8 +56,8 @@ public:
 			mCharisma = 10;
 
 			DetermineBonuses();
-
 			mProfBonus = 2;
+			mLvl = 1;
 
 			mArmorClass = 10 + mDexBonus;
 			mHitDie = 4;
@@ -60,6 +65,9 @@ public:
 
 			mStrAttackMod = mStrBonus + mProfBonus;
 			mDexAttackMod = mDexBonus + mProfBonus;
+			mSpellSaveDc = 8 + mWisBonus + mProfBonus;
+			mSpellAttack = mWisBonus + mProfBonus;
+			mIsCaster = false;
 		}
 		//parameter constructor
 
@@ -68,36 +76,63 @@ public:
 		{
 
 			DetermineBonuses();
-
+			DetermineProfBonus();
 			mArmorClass = 10 + mDexBonus;
 			mHitPoints = Dice::RollHP(mHitDie, mLvl, mConBonus);
 
 			mStrAttackMod = mStrBonus + mProfBonus;
 			mDexAttackMod = mDexBonus + mProfBonus;
+			mSpellSaveDc = 8 + mWisBonus + mProfBonus;
+			mSpellAttack = mWisBonus + mProfBonus;
+			mIsCaster = false;
 		}
 		//getters
 		int Str() const {
 			return mStrength;
 		}
 
+		int StrBonus() const {
+			return mStrBonus;
+		}
+
 		int Dex() const {
 			return mDexterity;
+		}
+		
+		int DexBonus() const {
+			return mDexBonus;
 		}
 
 		int Con() const {
 			return mConstitution;
 		}
 
+		int ConBonus() const {
+			return mConBonus;
+		}
+
 		int Wis() const {
 			return mWisdom;
+		}
+
+		int WisBonus() const {
+			return mWisBonus;
 		}
 
 		int Intel() const {
 			return mIntelligence;
 		}
 
+		int IntelBonus() const {
+			return mIntBonus;
+		}
+
 		int Cha() const {
 			return mCharisma;
+		}
+
+		int ChaBonus() const {
+			return mChaBonus;
 		}
 
 		int Lvl() const {
@@ -109,16 +144,31 @@ public:
 		}
 
 		int HitDie() const {
-			return mHitDie:
+			return mHitDie;
 		}
 
 		int HitPoints() const {
 			return mHitPoints;
 		}
+		
+		int StrAttack() const {
+			return mStrAttackMod;
+		}
+
+		int DexAttack() const {
+			return mDexAttackMod;
+		}
+
+		bool IsCaster() const {
+			return mIsCaster;
+		}
 
 		string Name() const {
 			return mCharacterName;
 		}
+
+		
+
 		//setters
 		void Str(int newStrength) {
 			mStrength = newStrength;
@@ -159,6 +209,7 @@ public:
 		void Name(string newName) {
 			mCharacterName = newName;
 		}
+
 
 		//various behaviors for the character object
 		void DetermineBonuses();

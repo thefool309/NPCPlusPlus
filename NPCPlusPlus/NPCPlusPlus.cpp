@@ -16,6 +16,8 @@
 #include <iomanip>
 #include <limits>
 
+#include "Character.h"
+#include "Barbarian.h"
 #include "TheDiceBag.h"
 #include "Utils.h"
 #include "UI.h"
@@ -30,6 +32,8 @@ int main()
 	int ASmaxValue = 18;
 	int ASminValue = 9;
 
+	string name = UI::GetString("please enter your characters name", "Name: ");
+
 	//roll ability scores
 	vector<int> scores = Dice::RollAS();
 	//print the ability scores back
@@ -41,23 +45,11 @@ int main()
 
 	//define variables for ability scores and bonuses
 	int str;
-	int strBonus;
-
 	int dex;
-	int dexBonus;
-
 	int con;
-	int conBonus;
-
 	int intel;
-	int intelBonus;
-
 	int wis;
-	int wisBonus;
-
 	int cha;
-	int chaBonus;
-
 	//as or AS in these contexts stands for ability score
 	//define input constants for the programs min and max values
 
@@ -74,46 +66,8 @@ int main()
 	const int MISC_ATTACK_BONUS_MAX = 10; //highest input for misc attack mods
 
 	//take user input on where they would like to assign these scores
-	UI::TakeAllAbilityScores(str, dex, con, wis, intel, cha, strBonus, dexBonus, conBonus, intelBonus, wisBonus, chaBonus);
 
-	UI::ClearConsole();
-
-	int profBonus;
-
-	string profBonusPrime = "What is your proficiency bonus? ";
-	string profBonusPrompt = "Proficiency Bonus: ";				//intake user input on prof bonus
-	profBonus = UI::VerifyIntegerInput(PROF_MIN_INPUT, PROF_MAX_INPUT,
-										profBonusPrime , profBonusPrompt);
-
-	UI::ClearConsole();
-
-	int miscPhysAttackMod;
-	string miscAttackPrime = "Any other bonuses to physical attacks? (0 for none)";
-	string miscAttackPrompt = "Miscellaneous Attack Modifier: ";		//intake user input on misc attack mods
-	miscPhysAttackMod = UI::VerifyIntegerInput(MISC_ATTACK_BONUS_MIN, MISC_ATTACK_BONUS_MAX,
-												miscAttackPrime, miscAttackPrompt);	
-
-	int strBasedAttackBonus = strBonus + profBonus + miscPhysAttackMod; //str based attack bonus
-	int dexBasedAttackBonus = dexBonus + profBonus + miscPhysAttackMod; //dex based attack bonus
-
-	// in this context SC is Spell Casting abbreviated
-	
-
-	int scAttackBonus;
-	int spellSaveDC;
-	// DC stands for Difficulty Class
-	Utils::DetermineSCAbility(scAttackBonus, spellSaveDC, profBonus, chaBonus, wisBonus, intelBonus);
-
-	UI::ClearConsole();
-
-	int maxHitDie = 0;
-	//define prompts for the ui input method
-	string hitdiePrime = "Please enter the maximum value of the hit die";
-	string hitdiePrompt = "Largest Number on Hit Die: ";
-	
-
-	//user inputs maxHitDie and program verifies that it is in range
-	maxHitDie = UI::VerifyIntegerInput(HITDIE_INPUT_MIN, HITDIE_INPUT_MAX, hitdiePrime, hitdiePrompt);
+	UI::TakeAllAbilityScores(str, dex, con, wis, intel, cha);
 
 	UI::ClearConsole();
 
@@ -121,46 +75,49 @@ int main()
 	//define prompts for the ui input method
 	string numberOfDicePrime = "Please enter the number of Hit Dice (a.k.a. the LVL)";
 	string numberOfDicePrompt = "Number of Hit Dice: ";
-	
+
+	int maxHitDie = 0;
+	//define prompts for the ui input method
+	string hitdiePrime = "Please enter the maximum value of the hit die";
+	string hitdiePrompt = "Largest Number on Hit Die: ";
 
 	//user inputs numberOfDice and program verifies that it is in range
 	numberOfDice = UI::VerifyIntegerInput(NUMBER_OF_DICE_MIN, NUMBER_OF_DICE_MAX, numberOfDicePrime, numberOfDicePrompt);
+	Character newCharacter(str, dex, con, intel, wis, cha, numberOfDice, maxHitDie, name);
 
 	UI::ClearConsole();
 
-	int hitpoints = Dice::RollHP(maxHitDie, numberOfDice, conBonus);
-
 	cout << "these are your final scores:" << endl
-		<< setw(10) << "STR:" << setw(3) << str << setw(3)
-		<< "  STR Bonus: " << setw(3) << strBonus << endl
+		<< setw(10) << "STR:" << setw(3) << newCharacter.Str() << setw(3)
+		<< "  STR Bonus: " << setw(3) << newCharacter.StrBonus() << endl
 
-		<< setw(10) << "DEX:" << setw(3) << dex << setw(3)
-		<< "  DEX Bonus: " << setw(3) << dexBonus << endl
+		<< setw(10) << "DEX:" << setw(3) << newCharacter.Dex() << setw(3)
+		<< "  DEX Bonus: " << setw(3) << newCharacter.DexBonus() << endl
 
-		<< setw(10) << "CON:" << setw(3) << con << setw(3)
-		<< "  CON Bonus: " << setw(3) << conBonus << endl
+		<< setw(10) << "CON:" << setw(3) << newCharacter.Con() << setw(3)
+		<< "  CON Bonus: " << setw(3) << newCharacter.ConBonus() << endl
 
-		<< setw(10) << "INT:" << setw(3) << intel << setw(3)
-		<< "  INT Bonus: " << setw(3) << intelBonus << endl
+		<< setw(10) << "INT:" << setw(3) << newCharacter.Intel() << setw(3)
+		<< "  INT Bonus: " << setw(3) << newCharacter.IntelBonus() << endl
 
-		<< setw(10) << "WIS:" << setw(3) << wis << setw(3)
-		<< "  WIS Bonus: " << setw(3) << wisBonus << endl
+		<< setw(10) << "WIS:" << setw(3) << newCharacter.Wis() << setw(3)
+		<< "  WIS Bonus: " << setw(3) << newCharacter.WisBonus() << endl
 
-		<< setw(10) << "CHA:" << setw(3) << cha << setw(3)
-		<< "  CHA Bonus: " << setw(3) << chaBonus << endl;
+		<< setw(10) << "CHA:" << setw(3) << newCharacter.Cha() << setw(3)
+		<< "  CHA Bonus: " << setw(3) << newCharacter.ChaBonus() << endl;
 
 	cin.get();
 
 	cout << "These are your attack bonuses: " << endl
-		<< "STR based Attack Bonus: " << strBasedAttackBonus << endl
-		<< "DEX based Attack Bonus: " << dexBasedAttackBonus << endl << endl << endl;
-
-	cout << "Your Spell attack bonus: " << scAttackBonus << endl
-		<< "Your Spell Save DC: " << spellSaveDC << endl;
-
+		<< "STR based Attack Bonus: " << newCharacter.StrAttack() << endl
+		<< "DEX based Attack Bonus: " << newCharacter.DexAttack() << endl;
+	if (newCharacter.IsCaster()) {
+		/*cout << "Your Spell attack bonus: " << scAttackBonus << endl
+			<< "Your Spell Save DC: " << spellSaveDC << endl;*/
+	}
 	cin.get();
 
-	cout << endl << "Your HitPoints: " << hitpoints << endl;
+	cout << endl << "Your HitPoints: " << newCharacter.HitPoints() << endl;
 
 	cout << "Press any key to continue...";
 
