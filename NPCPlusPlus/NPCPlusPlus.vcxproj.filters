@@ -13,12 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="CharacterClasses">
-      <UniqueIdentifier>{54b2bf0d-2fee-4970-a775-542df9137c93}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="CharacterClasses\Barbarian">
-      <UniqueIdentifier>{e2074353-128f-4dfb-83ea-2dd029de2e5b}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="NPCPlusPlus.cpp">
@@ -37,7 +31,10 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Barbarian.cpp">
-      <Filter>CharacterClasses\Barbarian</Filter>
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Bard.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -57,7 +54,10 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Barbarian.h">
-      <Filter>CharacterClasses\Barbarian</Filter>
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Bard.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

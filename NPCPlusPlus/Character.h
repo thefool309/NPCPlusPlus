@@ -223,6 +223,10 @@ public:
 		void HitPoints(int newHitPoints) {
 			mHitPoints = newHitPoints;
 		}
+		
+		void IsCaster(bool isCaster) {
+			mIsCaster = isCaster;
+		}
 
 		void Name(string newName) {
 			mCharacterName = newName;
