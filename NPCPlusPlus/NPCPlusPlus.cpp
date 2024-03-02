@@ -112,8 +112,8 @@ int main()
 		<< "STR based Attack Bonus: " << newCharacter.StrAttack() << endl
 		<< "DEX based Attack Bonus: " << newCharacter.DexAttack() << endl;
 	if (newCharacter.IsCaster()) {
-		/*cout << "Your Spell attack bonus: " << scAttackBonus << endl
-			<< "Your Spell Save DC: " << spellSaveDC << endl;*/
+		cout << "Your Spell attack bonus: " << newCharacter.SpellAttack() << endl
+			 << "Your Spell Save DC: " << newCharacter.SpellSave() << endl;
 	}
 	cin.get();
 

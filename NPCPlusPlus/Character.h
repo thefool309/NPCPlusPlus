@@ -153,6 +153,10 @@ public:
 			return mChaBonus;
 		}
 
+		int ProfBonus() const {
+			return mProfBonus;
+		}
+
 		int Lvl() const {
 			return mLvl;
 		}
@@ -177,6 +181,14 @@ public:
 			return mDexAttackMod;
 		}
 
+		int SpellSave() const {
+			return mSpellSaveDc;
+		}
+
+		int SpellAttack() const {
+			return mSpellAttack;
+		}
+
 		bool IsCaster() const {
 			return mIsCaster;
 		}
@@ -189,7 +201,7 @@ public:
 
 		//setters
 		void Str(int newStrength) {
-			mStrength = newStrength;
+			mStrength = newStrength;	//if you change ability scores remember to redeterming the bonuses
 		}
 
 		void Dex(int newDexterity) {
@@ -224,6 +236,14 @@ public:
 			mHitPoints = newHitPoints;
 		}
 		
+		void SpellSave(int newSpellSave) {
+			mSpellSaveDc = newSpellSave;
+		}
+
+		void SpellAttack(int newSpellAttack) {
+			mSpellAttack = newSpellAttack;
+		}
+
 		void IsCaster(bool isCaster) {
 			mIsCaster = isCaster;
 		}
