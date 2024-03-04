@@ -258,4 +258,3 @@ public:
 		void DetermineProfBonus();
 		void LvlUp();
 };
-

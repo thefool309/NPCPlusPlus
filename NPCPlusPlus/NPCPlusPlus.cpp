@@ -82,7 +82,7 @@ int main()
 	string hitdiePrompt = "Largest Number on Hit Die: ";
 
 	//user inputs numberOfDice and program verifies that it is in range
-	numberOfDice = UI::VerifyIntegerInput(NUMBER_OF_DICE_MIN, NUMBER_OF_DICE_MAX, numberOfDicePrime, numberOfDicePrompt);
+	numberOfDice = UI::VerifyIntegerInput(NUMBER_OF_DICE_MIN, NUMBER_OF_DICE_MAX, numberOfDicePrime, numberOfDicePrompt);	//lvl
 	Character newCharacter(str, dex, con, intel, wis, cha, numberOfDice, maxHitDie, name);
 
 	UI::ClearConsole();

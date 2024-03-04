@@ -130,6 +130,8 @@
     <ClCompile Include="Barbarian.cpp" />
     <ClCompile Include="Bard.cpp" />
     <ClCompile Include="Character.cpp" />
+    <ClCompile Include="Cleric.cpp" />
+    <ClCompile Include="Druid.cpp" />
     <ClCompile Include="NPCPlusPlus.cpp" />
     <ClCompile Include="TheDiceBag.cpp" />
     <ClCompile Include="UI.cpp" />
@@ -139,6 +141,8 @@
     <ClInclude Include="Barbarian.h" />
     <ClInclude Include="Bard.h" />
     <ClInclude Include="Character.h" />
+    <ClInclude Include="Cleric.h" />
+    <ClInclude Include="Druid.h" />
     <ClInclude Include="enums.h" />
     <ClInclude Include="TheDiceBag.h" />
     <ClInclude Include="UI.h" />

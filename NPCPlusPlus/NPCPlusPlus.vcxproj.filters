@@ -36,6 +36,12 @@
     <ClCompile Include="Bard.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Druid.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Cleric.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="enums.h">
@@ -57,6 +63,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Bard.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Druid.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Cleric.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
