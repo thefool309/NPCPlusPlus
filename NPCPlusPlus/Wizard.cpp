@@ -1,9 +1,9 @@
-#include "Cleric.h"
+#include "Wizard.h"
 
-void Cleric::SpellStats()
+void Wizard::DetermineSpellStats()
 {
-	SpellSave(8 + WisBonus() + ProfBonus());	//spell save and spell attack
-	SpellAttack(WisBonus() + ProfBonus());
+	SpellSave(8 + IntelBonus() + ProfBonus());	//spell save and spell attack
+	SpellAttack(IntelBonus() + ProfBonus());
 
 	switch (Lvl()) {
 	case 1:
@@ -177,15 +177,7 @@ void Cleric::SpellStats()
 	}
 }
 
-void Cleric::ChannelDivinity()
+void Wizard::DetermineArcaneRecovery()
 {
-	if (Lvl() < 2) {
-		mChannelDivinity = 0;
-	}
-	else if (Lvl() >= 2 && Lvl() < 6)
-		mChannelDivinity = 1;
-	else if (Lvl() >= 6 && Lvl() < 18)
-		mChannelDivinity = 2;
-	else
-		mChannelDivinity = 3;
+	mArcaneRecovery = Lvl() / 2;
 }
