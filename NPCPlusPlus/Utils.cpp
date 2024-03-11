@@ -3,6 +3,7 @@
 #include "Utils.h"
 #include "TheDiceBag.h"
 #include "UI.h"
+#include "Character.h"
 
 bool Utils::IsPrefix(std::string prefix, std::string comp)
 {
@@ -70,3 +71,5 @@ void Utils::DetermineSCAbility(int& scAttackBonus, int& spellSaveDC, int& profBo
 		break;
 	}
 }
+
+

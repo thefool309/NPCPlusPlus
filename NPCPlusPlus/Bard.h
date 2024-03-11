@@ -1,12 +1,13 @@
 #pragma once
 #include "Character.h"
-#include <map>
+#include "Structs.h"
+#include <vector>
 class Bard :
 	public Character
 {
 	int mBardicInspiration;
 	int mInspirationDie;
-	map<string, int> mSpellSlots;
+	vector<SpellSlots> mSpellSlots;
 	int mSpellsKnown;
 	int mCantripsKnown;
 
@@ -31,7 +32,7 @@ class Bard :
 		return mSpellsKnown;
 	}
 
-	map<string, int> SpellSlots() const {
+	vector<SpellSlots> GetSpellSlots() const {
 		return mSpellSlots;
 	}
 	//mutators
