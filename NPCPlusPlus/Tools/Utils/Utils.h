@@ -2,6 +2,7 @@
 #include <string>
 #include <algorithm>
 #include "enums.h"
+#include "Structs.h"
 
 class Utils {
 
@@ -9,5 +10,6 @@ class Utils {
 	static AbilityScore SpellcastingAbility();
 public:
 	static void DetermineSCAbility(int& scAttackBonus, int& spellSaveDC, int& profBonus, int& chaBonus, int& wisBonus, int& intelBonus);
+	
 
 };

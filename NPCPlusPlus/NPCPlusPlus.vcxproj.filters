@@ -13,6 +13,30 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Classes">
+      <UniqueIdentifier>{ff6489ed-970a-4cfd-bae8-96b69b4de537}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Barbarian">
+      <UniqueIdentifier>{6a1f4970-a1cc-46af-8a69-db751bf4a77f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Bard">
+      <UniqueIdentifier>{e47a342c-421a-4f6a-a668-94252ad6eb04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Cleric">
+      <UniqueIdentifier>{2e45dff9-40f4-4a24-b59f-d39c4fb0d403}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Wizard">
+      <UniqueIdentifier>{fcd4458c-4ca3-425a-ab23-ae54d5c0d3d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Fighter">
+      <UniqueIdentifier>{e067fae1-98ff-444e-940b-da41e4465e93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Druid">
+      <UniqueIdentifier>{1130f140-0573-4075-8b65-b93b8c139d27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Warlock">
+      <UniqueIdentifier>{ece84076-caa5-4982-bb3c-8928afad9e31}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="NPCPlusPlus.cpp">
@@ -31,25 +55,25 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Barbarian.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Classes\Barbarian</Filter>
     </ClCompile>
     <ClCompile Include="Bard.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Druid.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Classes\Bard</Filter>
     </ClCompile>
     <ClCompile Include="Cleric.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Fighter.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Classes\Cleric</Filter>
     </ClCompile>
     <ClCompile Include="Wizard.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Classes\Wizard</Filter>
+    </ClCompile>
+    <ClCompile Include="Fighter.cpp">
+      <Filter>Classes\Fighter</Filter>
+    </ClCompile>
+    <ClCompile Include="Druid.cpp">
+      <Filter>Classes\Druid</Filter>
     </ClCompile>
     <ClCompile Include="Warlock.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Classes\Warlock</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -68,29 +92,29 @@
     <ClInclude Include="UI.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Barbarian.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Bard.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Druid.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Cleric.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Fighter.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Wizard.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Warlock.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Structs.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Barbarian.h">
+      <Filter>Classes\Barbarian</Filter>
+    </ClInclude>
+    <ClInclude Include="Bard.h">
+      <Filter>Classes\Bard</Filter>
+    </ClInclude>
+    <ClInclude Include="Cleric.h">
+      <Filter>Classes\Cleric</Filter>
+    </ClInclude>
+    <ClInclude Include="Wizard.h">
+      <Filter>Classes\Wizard</Filter>
+    </ClInclude>
+    <ClInclude Include="Fighter.h">
+      <Filter>Classes\Fighter</Filter>
+    </ClInclude>
+    <ClInclude Include="Druid.h">
+      <Filter>Classes\Druid</Filter>
+    </ClInclude>
+    <ClInclude Include="Warlock.h">
+      <Filter>Classes\Warlock</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
