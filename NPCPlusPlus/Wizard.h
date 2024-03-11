@@ -1,12 +1,13 @@
 #pragma once
 #include "Character.h"
+#include "Structs.h"
 #include <map>
 
 class Wizard :
 	public Character
 {
 private:
-	std::map<std::string, int> mSpellSlots;
+	vector<SpellSlots> mSpellSlots;
 	int mCantripsKnown;
 	int mSpellbook;
 	int mArcaneRecovery;
@@ -16,6 +17,7 @@ public:
 		: Character(strength, dexterity, constitution, intelligence, wisdom, charisma, lvl, hitDie, name)
 	{
 		DetermineSpellStats();
+		DetermineArcaneRecovery();
 	}
 
 	//getters
@@ -27,7 +29,7 @@ public:
 		return mSpellbook;
 	}
 
-	std::map<std::string, int> Spellslots() const {
+	vector<SpellSlots> GetSpellslots() const {
 		return mSpellSlots;
 	}
 
