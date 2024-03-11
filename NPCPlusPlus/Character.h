@@ -73,8 +73,15 @@ public:
 		}
 		
 		//random leveled character constructor
-		Character(int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma, int lvl, int hitDie, string name)
-			:
+		Character(int strength,
+				  int dexterity,
+				  int constitution,
+			      int intelligence,
+				  int wisdom,
+				  int charisma,
+				  int lvl,
+				  int hitDie,
+				  string name) : 
 				  mStrength(strength),
 				  mDexterity(dexterity),
 				  mConstitution(constitution),

@@ -1,12 +1,11 @@
 #pragma once
 #include "Character.h"
-#include "Structs.h"
 #include <map>
 class Cleric :
 	public Character
 {
 private:
-	vector<SpellSlots> mSpellSlots;
+	std::map<string, int> mSpellSlots;
 	int mChannelDivinity;
 	int mCantripsKnown;
 public:
@@ -18,7 +17,7 @@ public:
 		ChannelDivinity();
 	}
 	//getters
-	vector<SpellSlots> GetSpellSlots() const {
+	std::map<string, int> SpellSlots() const {
 		return mSpellSlots;
 	}
 

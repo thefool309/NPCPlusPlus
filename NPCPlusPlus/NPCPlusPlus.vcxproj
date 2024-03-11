@@ -137,7 +137,6 @@
     <ClCompile Include="TheDiceBag.cpp" />
     <ClCompile Include="UI.cpp" />
     <ClCompile Include="Utils.cpp" />
-    <ClCompile Include="Warlock.cpp" />
     <ClCompile Include="Wizard.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -148,11 +147,9 @@
     <ClInclude Include="Druid.h" />
     <ClInclude Include="enums.h" />
     <ClInclude Include="Fighter.h" />
-    <ClInclude Include="Structs.h" />
     <ClInclude Include="TheDiceBag.h" />
     <ClInclude Include="UI.h" />
     <ClInclude Include="Utils.h" />
-    <ClInclude Include="Warlock.h" />
     <ClInclude Include="Wizard.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
