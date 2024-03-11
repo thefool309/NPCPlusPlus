@@ -104,6 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\CPP_Projects\NPCPlusPlus\NPCPlusPlus\Tools\Utils;C:\CPP_Projects\NPCPlusPlus\NPCPlusPlus\Tools\UI;C:\CPP_Projects\NPCPlusPlus\NPCPlusPlus\Classes\Druid;C:\CPP_Projects\NPCPlusPlus\NPCPlusPlus\Tools\TheDiceBag;C:\CPP_Projects\NPCPlusPlus\NPCPlusPlus\Classes\Wizard;C:\CPP_Projects\NPCPlusPlus\NPCPlusPlus\Classes\Warlock;C:\CPP_Projects\NPCPlusPlus\NPCPlusPlus\Classes\Fighter;C:\CPP_Projects\NPCPlusPlus\NPCPlusPlus\Classes\Cleric;C:\CPP_Projects\NPCPlusPlus\NPCPlusPlus\Classes\Character;C:\CPP_Projects\NPCPlusPlus\NPCPlusPlus\Classes\Bard;C:\CPP_Projects\NPCPlusPlus\NPCPlusPlus\Classes\Barbarian;C:\CPP_Projects\NPCPlusPlus\NPCPlusPlus\Tools\Misc;C:\CPP_Projects\NPCPlusPlus\NPCPlusPlus\Classes;C:\CPP_Projects\NPCPlusPlus\NPCPlusPlus;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
