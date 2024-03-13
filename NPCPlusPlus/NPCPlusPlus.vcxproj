@@ -131,39 +131,45 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Classes\Artificer\Artificer.cpp" />
     <ClCompile Include="Classes\Barbarian\Barbarian.cpp" />
     <ClCompile Include="Classes\Bard\Bard.cpp" />
     <ClCompile Include="Classes\Character\Character.cpp" />
     <ClCompile Include="Classes\Cleric\Cleric.cpp" />
     <ClCompile Include="Classes\Druid\Druid.cpp" />
     <ClCompile Include="Classes\Fighter\Fighter.cpp" />
+    <ClCompile Include="Classes\Paladin\Paladin.cpp" />
+    <ClCompile Include="Classes\Ranger\Ranger.cpp" />
+    <ClCompile Include="Classes\Rogue\Rogue.cpp" />
+    <ClCompile Include="Classes\Sorcerer\Sorcerer.cpp" />
     <ClCompile Include="Classes\Warlock\Warlock.cpp" />
     <ClCompile Include="Classes\Wizard\Wizard.cpp" />
+    <ClCompile Include="Monk.cpp" />
     <ClCompile Include="NPCPlusPlus.cpp" />
     <ClCompile Include="Tools\TheDiceBag\TheDiceBag.cpp" />
     <ClCompile Include="Tools\UI\UI.cpp" />
     <ClCompile Include="Tools\Utils\Utils.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Character.h" />
+    <ClInclude Include="Classes\Artificer\Artificer.h" />
     <ClInclude Include="Classes\Barbarian\Barbarian.h" />
     <ClInclude Include="Classes\Bard\Bard.h" />
     <ClInclude Include="Classes\Character\Character.h" />
     <ClInclude Include="Classes\Cleric\Cleric.h" />
     <ClInclude Include="Classes\Druid\Druid.h" />
     <ClInclude Include="Classes\Fighter\Fighter.h" />
+    <ClInclude Include="Classes\Monk\Monk.h" />
+    <ClInclude Include="Classes\Paladin\Paladin.h" />
+    <ClInclude Include="Classes\Ranger\Ranger.h" />
+    <ClInclude Include="Classes\Rogue\Rogue.h" />
+    <ClInclude Include="Classes\Sorcerer\Sorcerer.h" />
     <ClInclude Include="Classes\Warlock\Warlock.h" />
     <ClInclude Include="Classes\Wizard\Wizard.h" />
-    <ClInclude Include="enums.h" />
-    <ClInclude Include="Structs.h" />
-    <ClInclude Include="TheDiceBag.h" />
     <ClInclude Include="Tools\Misc\enums.h" />
     <ClInclude Include="Tools\Misc\Structs.h" />
     <ClInclude Include="Tools\TheDiceBag\TheDiceBag.h" />
     <ClInclude Include="Tools\UI\UI.h" />
     <ClInclude Include="Tools\Utils\Utils.h" />
-    <ClInclude Include="UI.h" />
-    <ClInclude Include="Utils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

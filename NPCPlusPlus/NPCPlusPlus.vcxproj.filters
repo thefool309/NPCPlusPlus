@@ -37,102 +37,156 @@
     <Filter Include="Classes\Warlock">
       <UniqueIdentifier>{ece84076-caa5-4982-bb3c-8928afad9e31}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\Character">
+      <UniqueIdentifier>{5aa7a181-cd14-4e48-ae6f-296ab49b8a20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tools">
+      <UniqueIdentifier>{578bf6ff-3706-43c9-bd3b-9ed51151a9b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tools\UI">
+      <UniqueIdentifier>{7cc3f020-99f4-4cfb-b83e-bbd91251d0a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tools\Utils">
+      <UniqueIdentifier>{6aba3cdd-24bd-497b-b9b7-a2e25fc4af8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tools\TheDiceBag">
+      <UniqueIdentifier>{bcc3c332-dba9-4960-8eb3-ec515aec74fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tools\Misc">
+      <UniqueIdentifier>{26c77a39-8641-4ea3-a073-b6e375412bbb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Sorcerer">
+      <UniqueIdentifier>{df13bcfc-7cd6-4c32-817f-fa2d439493b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Monk">
+      <UniqueIdentifier>{44a6f7b9-cc14-4d3f-803e-17c402ea2e3f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Ranger">
+      <UniqueIdentifier>{a979a1ce-2ea1-4c02-a4f6-6aff221046b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Paladin">
+      <UniqueIdentifier>{9fdced58-62ad-49b7-bc1e-3f3a15a83add}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Rogue">
+      <UniqueIdentifier>{73feb31f-1a8a-4599-a368-ac43a1c9b59f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Artificer">
+      <UniqueIdentifier>{0cc8744f-1560-49e7-82e7-e9044c9b9d1f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="NPCPlusPlus.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Classes\Barbarian\Barbarian.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Classes\Barbarian</Filter>
     </ClCompile>
     <ClCompile Include="Classes\Bard\Bard.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Classes\Character\Character.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Classes\Bard</Filter>
     </ClCompile>
     <ClCompile Include="Classes\Cleric\Cleric.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Classes\Druid\Druid.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Classes\Fighter\Fighter.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Classes\Cleric</Filter>
     </ClCompile>
     <ClCompile Include="Classes\Warlock\Warlock.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Classes\Warlock</Filter>
     </ClCompile>
     <ClCompile Include="Classes\Wizard\Wizard.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Classes\Wizard</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\Druid\Druid.cpp">
+      <Filter>Classes\Druid</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\Fighter\Fighter.cpp">
+      <Filter>Classes\Fighter</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\Character\Character.cpp">
+      <Filter>Classes\Character</Filter>
     </ClCompile>
     <ClCompile Include="Tools\TheDiceBag\TheDiceBag.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Tools\TheDiceBag</Filter>
     </ClCompile>
     <ClCompile Include="Tools\UI\UI.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Tools\UI</Filter>
     </ClCompile>
     <ClCompile Include="Tools\Utils\Utils.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Tools\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\Paladin\Paladin.cpp">
+      <Filter>Classes\Paladin</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\Artificer\Artificer.cpp">
+      <Filter>Classes\Artificer</Filter>
+    </ClCompile>
+    <ClCompile Include="Monk.cpp">
+      <Filter>Classes\Monk</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\Ranger\Ranger.cpp">
+      <Filter>Classes\Ranger</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\Rogue\Rogue.cpp">
+      <Filter>Classes\Rogue</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\Sorcerer\Sorcerer.cpp">
+      <Filter>Classes\Sorcerer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="enums.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TheDiceBag.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Utils.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Character.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="UI.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Structs.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Classes\Barbarian\Barbarian.h">
-      <Filter>Header Files</Filter>
+      <Filter>Classes\Barbarian</Filter>
     </ClInclude>
     <ClInclude Include="Classes\Bard\Bard.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Classes\Character\Character.h">
-      <Filter>Header Files</Filter>
+      <Filter>Classes\Bard</Filter>
     </ClInclude>
     <ClInclude Include="Classes\Cleric\Cleric.h">
-      <Filter>Header Files</Filter>
+      <Filter>Classes\Cleric</Filter>
     </ClInclude>
     <ClInclude Include="Classes\Druid\Druid.h">
-      <Filter>Header Files</Filter>
+      <Filter>Classes\Druid</Filter>
     </ClInclude>
     <ClInclude Include="Classes\Fighter\Fighter.h">
-      <Filter>Header Files</Filter>
+      <Filter>Classes\Fighter</Filter>
     </ClInclude>
     <ClInclude Include="Classes\Warlock\Warlock.h">
-      <Filter>Header Files</Filter>
+      <Filter>Classes\Warlock</Filter>
     </ClInclude>
     <ClInclude Include="Classes\Wizard\Wizard.h">
-      <Filter>Header Files</Filter>
+      <Filter>Classes\Wizard</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Character\Character.h">
+      <Filter>Classes\Character</Filter>
     </ClInclude>
     <ClInclude Include="Tools\Misc\enums.h">
-      <Filter>Header Files</Filter>
+      <Filter>Tools\Misc</Filter>
     </ClInclude>
     <ClInclude Include="Tools\Misc\Structs.h">
-      <Filter>Header Files</Filter>
+      <Filter>Tools\Misc</Filter>
     </ClInclude>
     <ClInclude Include="Tools\TheDiceBag\TheDiceBag.h">
-      <Filter>Header Files</Filter>
+      <Filter>Tools\TheDiceBag</Filter>
     </ClInclude>
     <ClInclude Include="Tools\UI\UI.h">
-      <Filter>Header Files</Filter>
+      <Filter>Tools\UI</Filter>
     </ClInclude>
     <ClInclude Include="Tools\Utils\Utils.h">
-      <Filter>Header Files</Filter>
+      <Filter>Tools\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Paladin\Paladin.h">
+      <Filter>Classes\Paladin</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Artificer\Artificer.h">
+      <Filter>Classes\Artificer</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Monk\Monk.h">
+      <Filter>Classes\Monk</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Ranger\Ranger.h">
+      <Filter>Classes\Ranger</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Rogue\Rogue.h">
+      <Filter>Classes\Rogue</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Sorcerer\Sorcerer.h">
+      <Filter>Classes\Sorcerer</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
