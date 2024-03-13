@@ -1,7 +1,6 @@
 #pragma once
 #include "Character.h"
 #include "Structs.h"
-#include <map>
 
 class Wizard :
 	public Character
