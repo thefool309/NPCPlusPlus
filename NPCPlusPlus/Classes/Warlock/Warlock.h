@@ -17,6 +17,22 @@ class Warlock :
 		DetermineSpellStats();
 	}
 
+	int SpellsKnown() const {
+		return mSpellsKnown;
+	}
+
+	int Cantrips() const {
+		return mCantripsKnown;
+	}
+
+	int Invocations() const {
+		return mInvocations;
+	}
+
+	SpellSlots GetSpellSlots() const {
+		return mSpellSlots;
+	}
+
 	void DetermineInvocations();
 	void DetermineSpellStats();
 };

@@ -12,6 +12,10 @@ public:
 		DetermineSneakAttack();
 	}
 
+	int SneakAttack() const {
+		return mNumOfSneakAttackDice;
+	}
+
 	void DetermineSneakAttack();
 };
 

@@ -18,6 +18,22 @@ public:
         DetermineSorcPnts();
     }
 
+    int SorceryPoints() const {
+        return mSorceryPoints;
+    }
+
+    vector<SpellSlots> GetSpellSlots() {
+        return mSpellSlots;
+    }
+
+    int SpellsKnown() const {
+        return mSpellsKnown;
+    }
+
+    int Cantrips() const {
+        return mCantripsKnown;
+    }
+
     void DetermineSpellStats();
     void DetermineSorcPnts();
 
