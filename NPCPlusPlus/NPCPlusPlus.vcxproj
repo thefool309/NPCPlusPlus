@@ -144,7 +144,7 @@
     <ClCompile Include="Classes\Sorcerer\Sorcerer.cpp" />
     <ClCompile Include="Classes\Warlock\Warlock.cpp" />
     <ClCompile Include="Classes\Wizard\Wizard.cpp" />
-    <ClCompile Include="Monk.cpp" />
+    <ClCompile Include="Classes\Monk\Monk.cpp" />
     <ClCompile Include="NPCPlusPlus.cpp" />
     <ClCompile Include="Tools\TheDiceBag\TheDiceBag.cpp" />
     <ClCompile Include="Tools\UI\UI.cpp" />
