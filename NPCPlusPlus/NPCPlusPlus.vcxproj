@@ -70,6 +70,9 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>C:\CPP_Projects\NPCPlusPlus\NPCPlusPlus\Tools\Utils;C:\CPP_Projects\NPCPlusPlus\NPCPlusPlus\Tools\UI;C:\CPP_Projects\NPCPlusPlus\NPCPlusPlus\Tools\TheDiceBag;C:\CPP_Projects\NPCPlusPlus\NPCPlusPlus\Tools\Misc;C:\CPP_Projects\NPCPlusPlus\NPCPlusPlus\Classes\Wizard;C:\CPP_Projects\NPCPlusPlus\NPCPlusPlus\Classes\Warlock;C:\CPP_Projects\NPCPlusPlus\NPCPlusPlus\Classes\Fighter;C:\CPP_Projects\NPCPlusPlus\NPCPlusPlus\Classes\Druid;C:\CPP_Projects\NPCPlusPlus\NPCPlusPlus\Classes\Cleric;C:\CPP_Projects\NPCPlusPlus\NPCPlusPlus\Classes\Character;C:\CPP_Projects\NPCPlusPlus\NPCPlusPlus\Classes\Bard;C:\CPP_Projects\NPCPlusPlus\NPCPlusPlus\Classes\Barbarian;$(IncludePath)</IncludePath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -128,33 +131,39 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Barbarian.cpp" />
-    <ClCompile Include="Bard.cpp" />
-    <ClCompile Include="Character.cpp" />
-    <ClCompile Include="Cleric.cpp" />
-    <ClCompile Include="Druid.cpp" />
-    <ClCompile Include="Fighter.cpp" />
+    <ClCompile Include="Classes\Barbarian\Barbarian.cpp" />
+    <ClCompile Include="Classes\Bard\Bard.cpp" />
+    <ClCompile Include="Classes\Character\Character.cpp" />
+    <ClCompile Include="Classes\Cleric\Cleric.cpp" />
+    <ClCompile Include="Classes\Druid\Druid.cpp" />
+    <ClCompile Include="Classes\Fighter\Fighter.cpp" />
+    <ClCompile Include="Classes\Warlock\Warlock.cpp" />
+    <ClCompile Include="Classes\Wizard\Wizard.cpp" />
     <ClCompile Include="NPCPlusPlus.cpp" />
-    <ClCompile Include="TheDiceBag.cpp" />
-    <ClCompile Include="UI.cpp" />
-    <ClCompile Include="Utils.cpp" />
-    <ClCompile Include="Warlock.cpp" />
-    <ClCompile Include="Wizard.cpp" />
+    <ClCompile Include="Tools\TheDiceBag\TheDiceBag.cpp" />
+    <ClCompile Include="Tools\UI\UI.cpp" />
+    <ClCompile Include="Tools\Utils\Utils.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Barbarian.h" />
-    <ClInclude Include="Bard.h" />
     <ClInclude Include="Character.h" />
-    <ClInclude Include="Cleric.h" />
-    <ClInclude Include="Druid.h" />
+    <ClInclude Include="Classes\Barbarian\Barbarian.h" />
+    <ClInclude Include="Classes\Bard\Bard.h" />
+    <ClInclude Include="Classes\Character\Character.h" />
+    <ClInclude Include="Classes\Cleric\Cleric.h" />
+    <ClInclude Include="Classes\Druid\Druid.h" />
+    <ClInclude Include="Classes\Fighter\Fighter.h" />
+    <ClInclude Include="Classes\Warlock\Warlock.h" />
+    <ClInclude Include="Classes\Wizard\Wizard.h" />
     <ClInclude Include="enums.h" />
-    <ClInclude Include="Fighter.h" />
     <ClInclude Include="Structs.h" />
     <ClInclude Include="TheDiceBag.h" />
+    <ClInclude Include="Tools\Misc\enums.h" />
+    <ClInclude Include="Tools\Misc\Structs.h" />
+    <ClInclude Include="Tools\TheDiceBag\TheDiceBag.h" />
+    <ClInclude Include="Tools\UI\UI.h" />
+    <ClInclude Include="Tools\Utils\Utils.h" />
     <ClInclude Include="UI.h" />
     <ClInclude Include="Utils.h" />
-    <ClInclude Include="Warlock.h" />
-    <ClInclude Include="Wizard.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -16,9 +16,14 @@
 #include <iomanip>
 #include <limits>
 
-#include "Character.h"
 #include "Barbarian.h"
-#include "TheDiceBag.h"
+#include "Bard.h"
+#include "Character.h"
+#include "Cleric.h"
+#include "Druid.h"
+#include "Fighter.h"
+#include "Warlock.h"
+#include "Wizard.h"
 #include "Utils.h"
 #include "UI.h"
 

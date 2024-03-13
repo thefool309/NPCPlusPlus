@@ -42,38 +42,38 @@
     <ClCompile Include="NPCPlusPlus.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TheDiceBag.cpp">
+    <ClCompile Include="Classes\Barbarian\Barbarian.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Character.cpp">
+    <ClCompile Include="Classes\Bard\Bard.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Utils.cpp">
+    <ClCompile Include="Classes\Character\Character.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="UI.cpp">
+    <ClCompile Include="Classes\Cleric\Cleric.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Barbarian.cpp">
-      <Filter>Classes\Barbarian</Filter>
+    <ClCompile Include="Classes\Druid\Druid.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Bard.cpp">
-      <Filter>Classes\Bard</Filter>
+    <ClCompile Include="Classes\Fighter\Fighter.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Cleric.cpp">
-      <Filter>Classes\Cleric</Filter>
+    <ClCompile Include="Classes\Warlock\Warlock.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Wizard.cpp">
-      <Filter>Classes\Wizard</Filter>
+    <ClCompile Include="Classes\Wizard\Wizard.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Fighter.cpp">
-      <Filter>Classes\Fighter</Filter>
+    <ClCompile Include="Tools\TheDiceBag\TheDiceBag.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Druid.cpp">
-      <Filter>Classes\Druid</Filter>
+    <ClCompile Include="Tools\UI\UI.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Warlock.cpp">
-      <Filter>Classes\Warlock</Filter>
+    <ClCompile Include="Tools\Utils\Utils.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -95,26 +95,44 @@
     <ClInclude Include="Structs.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Barbarian.h">
-      <Filter>Classes\Barbarian</Filter>
+    <ClInclude Include="Classes\Barbarian\Barbarian.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Bard.h">
-      <Filter>Classes\Bard</Filter>
+    <ClInclude Include="Classes\Bard\Bard.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Cleric.h">
-      <Filter>Classes\Cleric</Filter>
+    <ClInclude Include="Classes\Character\Character.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Wizard.h">
-      <Filter>Classes\Wizard</Filter>
+    <ClInclude Include="Classes\Cleric\Cleric.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Fighter.h">
-      <Filter>Classes\Fighter</Filter>
+    <ClInclude Include="Classes\Druid\Druid.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Druid.h">
-      <Filter>Classes\Druid</Filter>
+    <ClInclude Include="Classes\Fighter\Fighter.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Warlock.h">
-      <Filter>Classes\Warlock</Filter>
+    <ClInclude Include="Classes\Warlock\Warlock.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Wizard\Wizard.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\Misc\enums.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\Misc\Structs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\TheDiceBag\TheDiceBag.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\UI\UI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\Utils\Utils.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

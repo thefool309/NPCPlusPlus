@@ -36,22 +36,18 @@ void Bard::DetermineSpellStats()
 	case 1:
 		mCantripsKnown = 2;
 		mSpellsKnown = 4;
-		mSpellSlots["Level 1"] = 2;
 		Level1.mNumberOfSlots = 2;
 		mSpellSlots.push_back(Level1);
 		break;
 	case 2:
 		mCantripsKnown = 2;
 		mSpellsKnown = 5;
-		mSpellSlots["Level 1"] = 3;
 		Level1.mNumberOfSlots = 3;
 		mSpellSlots.push_back(Level1);
 		break;
 	case 3:
 		mCantripsKnown = 2;
 		mSpellsKnown = 6;
-		mSpellSlots["Level 1"] = 4;
-		mSpellSlots["Level 2"] = 2;
 		Level1.mNumberOfSlots = 4;
 		Level2.mNumberOfSlots = 2;
 		mSpellSlots.push_back(Level1);
@@ -60,8 +56,6 @@ void Bard::DetermineSpellStats()
 	case 4:
 		mCantripsKnown = 3;
 		mSpellsKnown = 7;
-		mSpellSlots["Level 1"] = 4;
-		mSpellSlots["Level 2"] = 3;
 		Level1.mNumberOfSlots = 4;
 		Level2.mNumberOfSlots = 3;
 		mSpellSlots.push_back(Level1);
@@ -70,9 +64,6 @@ void Bard::DetermineSpellStats()
 	case 5:
 		mCantripsKnown = 3;
 		mSpellsKnown = 8;
-		mSpellSlots["Level 1"] = 4;
-		mSpellSlots["Level 2"] = 3;
-		mSpellSlots["Level 3"] = 2;
 		Level1.mNumberOfSlots = 4;
 		Level2.mNumberOfSlots = 3;
 		Level3.mNumberOfSlots = 2;
@@ -83,9 +74,6 @@ void Bard::DetermineSpellStats()
 	case 6:
 		mCantripsKnown = 3;
 		mSpellsKnown = 9;
-		mSpellSlots["Level 1"] = 4;
-		mSpellSlots["Level 2"] = 3;
-		mSpellSlots["Level 3"] = 3;
 		Level1.mNumberOfSlots = 4;
 		Level2.mNumberOfSlots = 3;
 		Level3.mNumberOfSlots = 3;
@@ -96,10 +84,6 @@ void Bard::DetermineSpellStats()
 	case 7:
 		mCantripsKnown = 3;
 		mSpellsKnown = 10;
-		mSpellSlots["Level 1"] = 4;
-		mSpellSlots["Level 2"] = 3;
-		mSpellSlots["Level 3"] = 3;
-		mSpellSlots["Level 4"] = 1;
 		Level1.mNumberOfSlots = 4;
 		Level2.mNumberOfSlots = 3;
 		Level3.mNumberOfSlots = 3;
@@ -112,10 +96,6 @@ void Bard::DetermineSpellStats()
 	case 8:
 		mCantripsKnown = 3;
 		mSpellsKnown = 11;
-		mSpellSlots["Level 1"] = 4;
-		mSpellSlots["Level 2"] = 3;
-		mSpellSlots["Level 3"] = 3;
-		mSpellSlots["Level 4"] = 2;
 		Level1.mNumberOfSlots = 4;
 		Level2.mNumberOfSlots = 3;
 		Level3.mNumberOfSlots = 3;
@@ -128,11 +108,6 @@ void Bard::DetermineSpellStats()
 	case 9: 
 		mCantripsKnown = 3;
 		mSpellsKnown = 12;
-		mSpellSlots["Level 1"] = 4;
-		mSpellSlots["Level 2"] = 3;
-		mSpellSlots["Level 3"] = 3;
-		mSpellSlots["Level 4"] = 3;
-		mSpellSlots["Level 5"] = 1;
 		Level1.mNumberOfSlots = 4;
 		Level2.mNumberOfSlots = 3;
 		Level3.mNumberOfSlots = 3;
@@ -147,11 +122,6 @@ void Bard::DetermineSpellStats()
 	case 10:
 		mCantripsKnown = 4;
 		mSpellsKnown = 14;
-		mSpellSlots["Level 1"] = 4;
-		mSpellSlots["Level 2"] = 3;
-		mSpellSlots["Level 3"] = 3;
-		mSpellSlots["Level 4"] = 3;
-		mSpellSlots["Level 5"] = 2;
 		Level1.mNumberOfSlots = 4;
 		Level2.mNumberOfSlots = 3;
 		Level3.mNumberOfSlots = 3;
@@ -166,12 +136,6 @@ void Bard::DetermineSpellStats()
 	case 11:
 		mCantripsKnown = 4;
 		mSpellsKnown = 15;
-		mSpellSlots["Level 1"] = 4;
-		mSpellSlots["Level 2"] = 3;
-		mSpellSlots["Level 3"] = 3;
-		mSpellSlots["Level 4"] = 3;
-		mSpellSlots["Level 5"] = 2;
-		mSpellSlots["Level 6"] = 1;
 		Level1.mNumberOfSlots = 4;
 		Level2.mNumberOfSlots = 3;
 		Level3.mNumberOfSlots = 3;
@@ -188,12 +152,6 @@ void Bard::DetermineSpellStats()
 	case 12:
 		mCantripsKnown = 4;
 		mSpellsKnown = 15;
-		mSpellSlots["Level 1"] = 4;
-		mSpellSlots["Level 2"] = 3;
-		mSpellSlots["Level 3"] = 3;
-		mSpellSlots["Level 4"] = 3;
-		mSpellSlots["Level 5"] = 2;
-		mSpellSlots["Level 6"] = 1;
 		Level1.mNumberOfSlots = 4;
 		Level2.mNumberOfSlots = 3;
 		Level3.mNumberOfSlots = 3;
@@ -210,13 +168,6 @@ void Bard::DetermineSpellStats()
 	case 13:
 		mCantripsKnown = 4;
 		mSpellsKnown = 16;
-		mSpellSlots["Level 1"] = 4;
-		mSpellSlots["Level 2"] = 3;
-		mSpellSlots["Level 3"] = 3;
-		mSpellSlots["Level 4"] = 3;
-		mSpellSlots["Level 5"] = 2;
-		mSpellSlots["Level 6"] = 1;
-		mSpellSlots["Level 7"] = 1;
 		Level1.mNumberOfSlots = 4;
 		Level2.mNumberOfSlots = 3;
 		Level3.mNumberOfSlots = 3;
@@ -235,13 +186,6 @@ void Bard::DetermineSpellStats()
 	case 14:
 		mCantripsKnown = 4;
 		mSpellsKnown = 18;
-		mSpellSlots["Level 1"] = 4;
-		mSpellSlots["Level 2"] = 3;
-		mSpellSlots["Level 3"] = 3;
-		mSpellSlots["Level 4"] = 3;
-		mSpellSlots["Level 5"] = 2;
-		mSpellSlots["Level 6"] = 1;
-		mSpellSlots["Level 7"] = 1;
 		Level1.mNumberOfSlots = 4;
 		Level2.mNumberOfSlots = 3;
 		Level3.mNumberOfSlots = 3;
@@ -260,14 +204,6 @@ void Bard::DetermineSpellStats()
 	case 15:
 		mCantripsKnown = 4;
 		mSpellsKnown = 19;
-		mSpellSlots["Level 1"] = 4;
-		mSpellSlots["Level 2"] = 3;
-		mSpellSlots["Level 3"] = 3;
-		mSpellSlots["Level 4"] = 3;
-		mSpellSlots["Level 5"] = 2;
-		mSpellSlots["Level 6"] = 1;
-		mSpellSlots["Level 7"] = 1;
-		mSpellSlots["Level 8"] = 1;
 		Level1.mNumberOfSlots = 4;
 		Level2.mNumberOfSlots = 3;
 		Level3.mNumberOfSlots = 3;
@@ -288,14 +224,6 @@ void Bard::DetermineSpellStats()
 	case 16:
 		mCantripsKnown = 4;
 		mSpellsKnown = 19;
-		mSpellSlots["Level 1"] = 4;
-		mSpellSlots["Level 2"] = 3;
-		mSpellSlots["Level 3"] = 3;
-		mSpellSlots["Level 4"] = 3;
-		mSpellSlots["Level 5"] = 2;
-		mSpellSlots["Level 6"] = 1;
-		mSpellSlots["Level 7"] = 1;
-		mSpellSlots["Level 8"] = 1;
 		Level1.mNumberOfSlots = 4;
 		Level2.mNumberOfSlots = 3;
 		Level3.mNumberOfSlots = 3;
@@ -316,15 +244,6 @@ void Bard::DetermineSpellStats()
 	case 17:
 		mCantripsKnown = 4;
 		mSpellsKnown = 20;
-		mSpellSlots["Level 1"] = 4;
-		mSpellSlots["Level 2"] = 3;
-		mSpellSlots["Level 3"] = 3;
-		mSpellSlots["Level 4"] = 3;
-		mSpellSlots["Level 5"] = 2;
-		mSpellSlots["Level 6"] = 1;
-		mSpellSlots["Level 7"] = 1;
-		mSpellSlots["Level 8"] = 1;
-		mSpellSlots["Level 9"] = 1;
 		Level1.mNumberOfSlots = 4;
 		Level2.mNumberOfSlots = 3;
 		Level3.mNumberOfSlots = 3;
@@ -347,15 +266,6 @@ void Bard::DetermineSpellStats()
 	case 18:
 		mCantripsKnown = 4;
 		mSpellsKnown = 22;
-		mSpellSlots["Level 1"] = 4;
-		mSpellSlots["Level 2"] = 3;
-		mSpellSlots["Level 3"] = 3;
-		mSpellSlots["Level 4"] = 3;
-		mSpellSlots["Level 5"] = 2;
-		mSpellSlots["Level 6"] = 1;
-		mSpellSlots["Level 7"] = 1;
-		mSpellSlots["Level 8"] = 1;
-		mSpellSlots["Level 9"] = 1;
 		Level1.mNumberOfSlots = 4;
 		Level2.mNumberOfSlots = 3;
 		Level3.mNumberOfSlots = 3;
@@ -378,15 +288,6 @@ void Bard::DetermineSpellStats()
 	case 19:
 		mCantripsKnown = 4;
 		mSpellsKnown = 22;
-		mSpellSlots["Level 1"] = 4;
-		mSpellSlots["Level 2"] = 3;
-		mSpellSlots["Level 3"] = 3;
-		mSpellSlots["Level 4"] = 3;
-		mSpellSlots["Level 5"] = 2;
-		mSpellSlots["Level 6"] = 2;
-		mSpellSlots["Level 7"] = 1;
-		mSpellSlots["Level 8"] = 1;
-		mSpellSlots["Level 9"] = 1;
 		Level1.mNumberOfSlots = 4;
 		Level2.mNumberOfSlots = 3;
 		Level3.mNumberOfSlots = 3;
@@ -409,15 +310,6 @@ void Bard::DetermineSpellStats()
 	default:
 		mCantripsKnown = 4;
 		mSpellsKnown = 22;
-		mSpellSlots["Level 1"] = 4;
-		mSpellSlots["Level 2"] = 3;
-		mSpellSlots["Level 3"] = 3;
-		mSpellSlots["Level 4"] = 3;
-		mSpellSlots["Level 5"] = 2;
-		mSpellSlots["Level 6"] = 2;
-		mSpellSlots["Level 7"] = 2;
-		mSpellSlots["Level 8"] = 1;
-		mSpellSlots["Level 9"] = 1;
 		Level1.mNumberOfSlots = 4;
 		Level2.mNumberOfSlots = 3;
 		Level3.mNumberOfSlots = 3;
