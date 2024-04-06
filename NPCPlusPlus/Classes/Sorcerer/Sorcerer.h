@@ -16,6 +16,7 @@ public:
     {
         DetermineSpellStats();
         DetermineSorcPnts();
+        IsCaster(true);
     }
 
     int SorceryPoints() const {

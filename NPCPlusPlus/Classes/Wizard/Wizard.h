@@ -1,6 +1,7 @@
 #pragma once
 #include "Character.h"
 #include "Structs.h"
+#include "TheDiceBag.h"
 
 class Wizard :
 	public Character
@@ -17,6 +18,7 @@ public:
 	{
 		DetermineSpellStats();
 		DetermineArcaneRecovery();
+		IsCaster(true);
 	}
 
 	//getters
