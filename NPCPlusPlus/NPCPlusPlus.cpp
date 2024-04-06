@@ -89,11 +89,13 @@ int main()
 	//user inputs numberOfDice and program verifies that it is in range
 	numberOfDice = UI::VerifyIntegerInput(NUMBER_OF_DICE_MIN, NUMBER_OF_DICE_MAX, numberOfDicePrime, numberOfDicePrompt);	//lvl
 	Character newCharacter(str, dex, con, intel, wis, cha, numberOfDice, maxHitDie, name);
-
+	///created new character
 	UI::ClearConsole();
 
+	
+
 	cout << "these are your final scores:" << endl
-		<< setw(10) << "STR:" << setw(3) << newCharacter.Str() << setw(3)
+		<< setw(10) << "STR:" << setw(3) << newCharacter.Str() << setw(3) ///calling getters on new character
 		<< "  STR Bonus: " << setw(3) << newCharacter.StrBonus() << endl
 
 		<< setw(10) << "DEX:" << setw(3) << newCharacter.Dex() << setw(3)
