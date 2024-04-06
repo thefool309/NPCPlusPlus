@@ -1,10 +1,9 @@
 #pragma once
 #include <string>
 #include <vector>
-#include <memory>
-
+#include <iostream>
 #include "TheDiceBag.h"
-
+#include <iomanip>
 using namespace std;
 
 class Character
@@ -205,4 +204,5 @@ public:
 		void DetermineBonuses();
 		void DetermineProfBonus();
 		void LvlUp();
+		virtual void Print();
 };

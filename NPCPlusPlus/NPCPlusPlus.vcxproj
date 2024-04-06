@@ -145,6 +145,7 @@
     <ClCompile Include="Classes\Warlock\Warlock.cpp" />
     <ClCompile Include="Classes\Wizard\Wizard.cpp" />
     <ClCompile Include="Classes\Monk\Monk.cpp" />
+    <ClCompile Include="Helper.cpp" />
     <ClCompile Include="NPCPlusPlus.cpp" />
     <ClCompile Include="Tools\TheDiceBag\TheDiceBag.cpp" />
     <ClCompile Include="Tools\UI\UI.cpp" />
@@ -165,6 +166,7 @@
     <ClInclude Include="Classes\Sorcerer\Sorcerer.h" />
     <ClInclude Include="Classes\Warlock\Warlock.h" />
     <ClInclude Include="Classes\Wizard\Wizard.h" />
+    <ClInclude Include="Helper.h" />
     <ClInclude Include="Tools\Misc\enums.h" />
     <ClInclude Include="Tools\Misc\Structs.h" />
     <ClInclude Include="Tools\TheDiceBag\TheDiceBag.h" />

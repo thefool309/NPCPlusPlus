@@ -5,8 +5,6 @@ void Sorcerer::DetermineSpellStats()
 	SpellSave(8 + ChaBonus() + ProfBonus());	//spell save and spell attack
 	SpellAttack(ChaBonus() + ProfBonus());
 
-	IsCaster(true);
-
 	Dice::DetermineSpellSlotsFull(Lvl(), mSpellSlots);
 	
 	switch (Lvl()) {

@@ -1,9 +1,9 @@
 #include "Paladin.h"
 
-void Paladin::DetermineSpellStats()
+void Paladin::SpellStats()
 {
 	mLayOnHands = Lvl() * 5;
-	IsCaster(true);
+
 	SpellSave(8 + ChaBonus() + ProfBonus());	//spell save and spell attack
 	SpellAttack(ChaBonus() + ProfBonus());
 

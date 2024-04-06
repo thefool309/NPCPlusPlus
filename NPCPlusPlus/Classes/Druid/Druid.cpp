@@ -4,7 +4,6 @@ void Druid::SpellStats()
 {
 	SpellSave(8 + WisBonus() + ProfBonus());	//spell save and spell attack
 	SpellAttack(WisBonus() + ProfBonus());
-	IsCaster(true);
 	Dice::DetermineSpellSlotsFull(Lvl(), mCantripsKnown, mSpellSlots);
 }
 

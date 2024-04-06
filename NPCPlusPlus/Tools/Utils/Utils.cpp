@@ -1,5 +1,5 @@
 #include<iostream>
-
+#include <iomanip>
 #include "Utils.h"
 #include "TheDiceBag.h"
 #include "UI.h"
@@ -70,6 +70,84 @@ void Utils::DetermineSCAbility(int& scAttackBonus, int& spellSaveDC, int& profBo
 		spellSaveDC = (8 + chaBonus + profBonus);
 		break;
 	}
+}
+
+void Utils::PrintCharacterPtr(Character* newCharacter)
+{
+	std::cout << "these are your final scores:" << endl
+		<< std::setw(10) << "STR:" << std::setw(3) << newCharacter->Str() << setw(3)
+		<< "  STR Bonus: " << setw(3) << newCharacter->StrBonus() << endl
+
+		<< setw(10) << "DEX:" << setw(3) << newCharacter->Dex() << setw(3)
+		<< "  DEX Bonus: " << setw(3) << newCharacter->DexBonus() << endl
+
+		<< setw(10) << "CON:" << setw(3) << newCharacter->Con() << setw(3)
+		<< "  CON Bonus: " << setw(3) << newCharacter->ConBonus() << endl
+
+		<< setw(10) << "INT:" << setw(3) << newCharacter->Intel() << setw(3)
+		<< "  INT Bonus: " << setw(3) << newCharacter->IntelBonus() << endl
+
+		<< setw(10) << "WIS:" << setw(3) << newCharacter->Wis() << setw(3)
+		<< "  WIS Bonus: " << setw(3) << newCharacter->WisBonus() << endl
+
+		<< setw(10) << "CHA:" << setw(3) << newCharacter->Cha() << setw(3)
+		<< "  CHA Bonus: " << setw(3) << newCharacter->ChaBonus() << endl;
+
+	cin.get();
+
+	cout << "These are your attack bonuses: " << endl
+		<< "STR based Attack Bonus: " << newCharacter->StrAttack() << endl
+		<< "DEX based Attack Bonus: " << newCharacter->DexAttack() << endl;
+	if (newCharacter->IsCaster()) {
+		cout << "Your Spell attack bonus: " << newCharacter->SpellAttack() << endl
+			<< "Your Spell Save DC: " << newCharacter->SpellSave() << endl;
+	}
+	cin.get();
+
+	cout << endl << "Your HitPoints: " << newCharacter->HitPoints() << endl;
+
+	cout << "Press any key to continue...";
+
+	cin.get();
+}
+
+void Utils::PrintCharacter(Character newCharacter)
+{
+	cout << "these are your final scores:" << endl
+		<< setw(10) << "STR:" << setw(3) << newCharacter.Str() << setw(3)
+		<< "  STR Bonus: " << setw(3) << newCharacter.StrBonus() << endl
+
+		<< setw(10) << "DEX:" << setw(3) << newCharacter.Dex() << setw(3)
+		<< "  DEX Bonus: " << setw(3) << newCharacter.DexBonus() << endl
+
+		<< setw(10) << "CON:" << setw(3) << newCharacter.Con() << setw(3)
+		<< "  CON Bonus: " << setw(3) << newCharacter.ConBonus() << endl
+
+		<< setw(10) << "INT:" << setw(3) << newCharacter.Intel() << setw(3)
+		<< "  INT Bonus: " << setw(3) << newCharacter.IntelBonus() << endl
+
+		<< setw(10) << "WIS:" << setw(3) << newCharacter.Wis() << setw(3)
+		<< "  WIS Bonus: " << setw(3) << newCharacter.WisBonus() << endl
+
+		<< setw(10) << "CHA:" << setw(3) << newCharacter.Cha() << setw(3)
+		<< "  CHA Bonus: " << setw(3) << newCharacter.ChaBonus() << endl;
+
+	cin.get();
+
+	cout << "These are your attack bonuses: " << endl
+		<< "STR based Attack Bonus: " << newCharacter.StrAttack() << endl
+		<< "DEX based Attack Bonus: " << newCharacter.DexAttack() << endl;
+	if (newCharacter.IsCaster()) {
+		cout << "Your Spell attack bonus: " << newCharacter.SpellAttack() << endl
+			<< "Your Spell Save DC: " << newCharacter.SpellSave() << endl;
+	}
+	cin.get();
+
+	cout << endl << "Your HitPoints: " << newCharacter.HitPoints() << endl;
+
+	cout << "Press any key to continue...";
+
+	cin.get();
 }
 
 

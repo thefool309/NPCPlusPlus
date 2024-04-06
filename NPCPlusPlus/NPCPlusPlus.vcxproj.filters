@@ -129,6 +129,9 @@
     <ClCompile Include="Classes\Sorcerer\Sorcerer.cpp">
       <Filter>Classes\Sorcerer</Filter>
     </ClCompile>
+    <ClCompile Include="Helper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Classes\Barbarian\Barbarian.h">
@@ -187,6 +190,9 @@
     </ClInclude>
     <ClInclude Include="Classes\Sorcerer\Sorcerer.h">
       <Filter>Classes\Sorcerer</Filter>
+    </ClInclude>
+    <ClInclude Include="Helper.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

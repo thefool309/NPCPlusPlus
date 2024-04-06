@@ -18,6 +18,7 @@ public:
 	{
 		DetermineSpellStats();
 		DetermineArcaneRecovery();
+		IsCaster(true);
 	}
 
 	//getters
