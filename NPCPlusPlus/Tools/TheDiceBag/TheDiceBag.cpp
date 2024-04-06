@@ -57,6 +57,933 @@ using namespace std;
 		return hitpoints;
 	}
 
+	void Dice::DetermineSpellSlotsFull(int lvl, std::vector<SpellSlots>& spellSlots)
+	{
+		SpellSlots Level1(1, 0);
+		SpellSlots Level2(2, 0);
+		SpellSlots Level3(3, 0);
+		SpellSlots Level4(4, 0);
+		SpellSlots Level5(5, 0);
+		SpellSlots Level6(6, 0);
+		SpellSlots Level7(7, 0);
+		SpellSlots Level8(8, 0);
+		SpellSlots Level9(9, 0);
+		switch (lvl) {
+		case 1:
+			Level1.mNumberOfSlots = 2;
+			spellSlots.push_back(Level1);
+			break;
+		case 2:
+			Level1.mNumberOfSlots = 3;
+			spellSlots.push_back(Level1);
+			break;
+		case 3:
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 2;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			break;
+		case 4:
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			break;
+		case 5:
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			Level3.mNumberOfSlots = 2;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			spellSlots.push_back(Level3);
+			break;
+		case 6:
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			Level3.mNumberOfSlots = 3;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			spellSlots.push_back(Level3);
+			break;
+		case 7:
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			Level3.mNumberOfSlots = 3;
+			Level4.mNumberOfSlots = 1;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			spellSlots.push_back(Level3);
+			spellSlots.push_back(Level4);
+			break;
+		case 8:
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			Level3.mNumberOfSlots = 3;
+			Level4.mNumberOfSlots = 2;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			spellSlots.push_back(Level3);
+			spellSlots.push_back(Level4);
+			break;
+		case 9:
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			Level3.mNumberOfSlots = 3;
+			Level4.mNumberOfSlots = 3;
+			Level5.mNumberOfSlots = 1;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			spellSlots.push_back(Level3);
+			spellSlots.push_back(Level4);
+			spellSlots.push_back(Level5);
+			break;
+		case 10:
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			Level3.mNumberOfSlots = 3;
+			Level4.mNumberOfSlots = 3;
+			Level5.mNumberOfSlots = 2;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			spellSlots.push_back(Level3);
+			spellSlots.push_back(Level4);
+			spellSlots.push_back(Level5);
+			break;
+		case 11:
+			
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			Level3.mNumberOfSlots = 3;
+			Level4.mNumberOfSlots = 3;
+			Level5.mNumberOfSlots = 2;
+			Level6.mNumberOfSlots = 1;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			spellSlots.push_back(Level3);
+			spellSlots.push_back(Level4);
+			spellSlots.push_back(Level5);
+			spellSlots.push_back(Level6);
+			break;
+		case 12:
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			Level3.mNumberOfSlots = 3;
+			Level4.mNumberOfSlots = 3;
+			Level5.mNumberOfSlots = 2;
+			Level6.mNumberOfSlots = 1;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			spellSlots.push_back(Level3);
+			spellSlots.push_back(Level4);
+			spellSlots.push_back(Level5);
+			spellSlots.push_back(Level6);
+			break;
+		case 13:
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			Level3.mNumberOfSlots = 3;
+			Level4.mNumberOfSlots = 3;
+			Level5.mNumberOfSlots = 2;
+			Level6.mNumberOfSlots = 1;
+			Level7.mNumberOfSlots = 1;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			spellSlots.push_back(Level3);
+			spellSlots.push_back(Level4);
+			spellSlots.push_back(Level5);
+			spellSlots.push_back(Level6);
+			spellSlots.push_back(Level7);
+			break;
+		case 14:
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			Level3.mNumberOfSlots = 3;
+			Level4.mNumberOfSlots = 3;
+			Level5.mNumberOfSlots = 2;
+			Level6.mNumberOfSlots = 1;
+			Level7.mNumberOfSlots = 1;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			spellSlots.push_back(Level3);
+			spellSlots.push_back(Level4);
+			spellSlots.push_back(Level5);
+			spellSlots.push_back(Level6);
+			spellSlots.push_back(Level7);
+			break;
+		case 15:
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			Level3.mNumberOfSlots = 3;
+			Level4.mNumberOfSlots = 3;
+			Level5.mNumberOfSlots = 2;
+			Level6.mNumberOfSlots = 1;
+			Level7.mNumberOfSlots = 1;
+			Level8.mNumberOfSlots = 1;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			spellSlots.push_back(Level3);
+			spellSlots.push_back(Level4);
+			spellSlots.push_back(Level5);
+			spellSlots.push_back(Level6);
+			spellSlots.push_back(Level7);
+			spellSlots.push_back(Level8);
+			break;
+		case 16:
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			Level3.mNumberOfSlots = 3;
+			Level4.mNumberOfSlots = 3;
+			Level5.mNumberOfSlots = 2;
+			Level6.mNumberOfSlots = 1;
+			Level7.mNumberOfSlots = 1;
+			Level8.mNumberOfSlots = 1;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			spellSlots.push_back(Level3);
+			spellSlots.push_back(Level4);
+			spellSlots.push_back(Level5);
+			spellSlots.push_back(Level6);
+			spellSlots.push_back(Level7);
+			spellSlots.push_back(Level8);
+			break;
+		case 17:
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			Level3.mNumberOfSlots = 3;
+			Level4.mNumberOfSlots = 3;
+			Level5.mNumberOfSlots = 2;
+			Level6.mNumberOfSlots = 1;
+			Level7.mNumberOfSlots = 1;
+			Level8.mNumberOfSlots = 1;
+			Level9.mNumberOfSlots = 1;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			spellSlots.push_back(Level3);
+			spellSlots.push_back(Level4);
+			spellSlots.push_back(Level5);
+			spellSlots.push_back(Level6);
+			spellSlots.push_back(Level7);
+			spellSlots.push_back(Level8);
+			spellSlots.push_back(Level9);
+			break;
+		case 18:
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			Level3.mNumberOfSlots = 3;
+			Level4.mNumberOfSlots = 3;
+			Level5.mNumberOfSlots = 2;
+			Level6.mNumberOfSlots = 1;
+			Level7.mNumberOfSlots = 1;
+			Level8.mNumberOfSlots = 1;
+			Level9.mNumberOfSlots = 1;;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			spellSlots.push_back(Level3);
+			spellSlots.push_back(Level4);
+			spellSlots.push_back(Level5);
+			spellSlots.push_back(Level6);
+			spellSlots.push_back(Level7);
+			spellSlots.push_back(Level8);
+			spellSlots.push_back(Level9);
+			break;
+		case 19:
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			Level3.mNumberOfSlots = 3;
+			Level4.mNumberOfSlots = 3;
+			Level5.mNumberOfSlots = 2;
+			Level6.mNumberOfSlots = 2;
+			Level7.mNumberOfSlots = 1;
+			Level8.mNumberOfSlots = 1;
+			Level9.mNumberOfSlots = 1;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			spellSlots.push_back(Level3);
+			spellSlots.push_back(Level4);
+			spellSlots.push_back(Level5);
+			spellSlots.push_back(Level6);
+			spellSlots.push_back(Level7);
+			spellSlots.push_back(Level8);
+			spellSlots.push_back(Level9);
+			break;
+		default:
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			Level3.mNumberOfSlots = 3;
+			Level4.mNumberOfSlots = 3;
+			Level5.mNumberOfSlots = 2;
+			Level6.mNumberOfSlots = 2;
+			Level7.mNumberOfSlots = 2;
+			Level8.mNumberOfSlots = 1;
+			Level9.mNumberOfSlots = 1;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			spellSlots.push_back(Level3);
+			spellSlots.push_back(Level4);
+			spellSlots.push_back(Level5);
+			spellSlots.push_back(Level6);
+			spellSlots.push_back(Level7);
+			spellSlots.push_back(Level8);
+			spellSlots.push_back(Level9);
+			break;
+		}
+	}
+
+	void Dice::DetermineSpellSlotsHalf(int lvl, std::vector<SpellSlots>& spellSlots)
+	{
+		SpellSlots Level1(1, 0);
+		SpellSlots Level2(2, 0);
+		SpellSlots Level3(3, 0);
+		SpellSlots Level4(4, 0);
+		SpellSlots Level5(5, 0);
+
+		switch (lvl) {
+		case 1:
+			Level1.mNumberOfSlots = 2;
+			spellSlots.push_back(Level1);
+			break;
+		case 2:
+			Level1.mNumberOfSlots = 2;
+			spellSlots.push_back(Level1);
+			break;
+		case 3:
+			Level1.mNumberOfSlots = 3;
+			spellSlots.push_back(Level1);
+			break;
+		case 4:
+			Level1.mNumberOfSlots = 3;
+			spellSlots.push_back(Level1);
+			break;
+		case 5:
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 2;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			break;
+		case 6:
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 2;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			break;
+		case 7:
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			break;
+		case 8:
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			break;
+		case 9:
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			Level3.mNumberOfSlots = 2;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			spellSlots.push_back(Level3);
+			break;
+		case 10:
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			Level3.mNumberOfSlots = 2;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			spellSlots.push_back(Level3);
+			break;
+		case 11:
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			Level3.mNumberOfSlots = 3;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			spellSlots.push_back(Level3);
+			break;
+		case 12:
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			Level3.mNumberOfSlots = 3;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			spellSlots.push_back(Level3);
+			break;
+		case 13:
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			Level3.mNumberOfSlots = 3;
+			Level4.mNumberOfSlots = 1;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			spellSlots.push_back(Level3);
+			spellSlots.push_back(Level4);
+			break;
+		case 14:
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			Level3.mNumberOfSlots = 3;
+			Level4.mNumberOfSlots = 1;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			spellSlots.push_back(Level3);
+			spellSlots.push_back(Level4);
+			break;
+		case 15:
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			Level3.mNumberOfSlots = 3;
+			Level4.mNumberOfSlots = 2;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			spellSlots.push_back(Level3);
+			spellSlots.push_back(Level4);
+			break;
+		case 16:
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			Level3.mNumberOfSlots = 3;
+			Level4.mNumberOfSlots = 2;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			spellSlots.push_back(Level3);
+			spellSlots.push_back(Level4);
+			break;
+		case 17:
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			Level3.mNumberOfSlots = 3;
+			Level4.mNumberOfSlots = 3;
+			Level5.mNumberOfSlots = 1;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			spellSlots.push_back(Level3);
+			spellSlots.push_back(Level4);
+			spellSlots.push_back(Level5);
+			break;
+		case 18:
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			Level3.mNumberOfSlots = 3;
+			Level4.mNumberOfSlots = 3;
+			Level5.mNumberOfSlots = 1;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			spellSlots.push_back(Level3);
+			spellSlots.push_back(Level4);
+			spellSlots.push_back(Level5);
+			break;
+		case 19:
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			Level3.mNumberOfSlots = 3;
+			Level4.mNumberOfSlots = 3;
+			Level5.mNumberOfSlots = 2;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			spellSlots.push_back(Level3);
+			spellSlots.push_back(Level4);
+			spellSlots.push_back(Level5);
+			break;
+		default:
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			Level3.mNumberOfSlots = 3;
+			Level4.mNumberOfSlots = 3;
+			Level5.mNumberOfSlots = 2;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			spellSlots.push_back(Level3);
+			spellSlots.push_back(Level4);
+			spellSlots.push_back(Level5);
+			break;
+		}
+	}
+
+	void Dice::DetermineSpellSlotsFull(int lvl, int& cantripsKnown, std::vector<SpellSlots>& spellSlots)
+	{
+		SpellSlots Level1(1, 0);
+		SpellSlots Level2(2, 0);
+		SpellSlots Level3(3, 0);
+		SpellSlots Level4(4, 0);
+		SpellSlots Level5(5, 0);
+		SpellSlots Level6(6, 0);
+		SpellSlots Level7(7, 0);
+		SpellSlots Level8(8, 0);
+		SpellSlots Level9(9, 0);
+		switch (lvl) {
+		case 1:
+			cantripsKnown = 2;
+			Level1.mNumberOfSlots = 2;
+			spellSlots.push_back(Level1);
+			break;
+		case 2:
+			cantripsKnown = 2;
+			Level1.mNumberOfSlots = 3;
+			spellSlots.push_back(Level1);
+			break;
+		case 3:
+			cantripsKnown = 2;
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 2;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			break;
+		case 4:
+			cantripsKnown = 3;
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			break;
+		case 5:
+			cantripsKnown = 3;
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			Level3.mNumberOfSlots = 2;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			spellSlots.push_back(Level3);
+			break;
+		case 6:
+			cantripsKnown = 3;
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			Level3.mNumberOfSlots = 3;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			spellSlots.push_back(Level3);
+			break;
+		case 7:
+			cantripsKnown = 3;
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			Level3.mNumberOfSlots = 3;
+			Level4.mNumberOfSlots = 1;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			spellSlots.push_back(Level3);
+			spellSlots.push_back(Level4);
+			break;
+		case 8:
+			cantripsKnown = 3;
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			Level3.mNumberOfSlots = 3;
+			Level4.mNumberOfSlots = 2;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			spellSlots.push_back(Level3);
+			spellSlots.push_back(Level4);
+			break;
+		case 9:
+			cantripsKnown = 3;
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			Level3.mNumberOfSlots = 3;
+			Level4.mNumberOfSlots = 3;
+			Level5.mNumberOfSlots = 1;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			spellSlots.push_back(Level3);
+			spellSlots.push_back(Level4);
+			spellSlots.push_back(Level5);
+			break;
+		case 10:
+			cantripsKnown = 4;
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			Level3.mNumberOfSlots = 3;
+			Level4.mNumberOfSlots = 3;
+			Level5.mNumberOfSlots = 2;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			spellSlots.push_back(Level3);
+			spellSlots.push_back(Level4);
+			spellSlots.push_back(Level5);
+			break;
+		case 11:
+			cantripsKnown = 4;
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			Level3.mNumberOfSlots = 3;
+			Level4.mNumberOfSlots = 3;
+			Level5.mNumberOfSlots = 2;
+			Level6.mNumberOfSlots = 1;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			spellSlots.push_back(Level3);
+			spellSlots.push_back(Level4);
+			spellSlots.push_back(Level5);
+			spellSlots.push_back(Level6);
+			break;
+		case 12:
+			cantripsKnown = 4;
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			Level3.mNumberOfSlots = 3;
+			Level4.mNumberOfSlots = 3;
+			Level5.mNumberOfSlots = 2;
+			Level6.mNumberOfSlots = 1;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			spellSlots.push_back(Level3);
+			spellSlots.push_back(Level4);
+			spellSlots.push_back(Level5);
+			spellSlots.push_back(Level6);
+			break;
+		case 13:
+			cantripsKnown = 4;
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			Level3.mNumberOfSlots = 3;
+			Level4.mNumberOfSlots = 3;
+			Level5.mNumberOfSlots = 2;
+			Level6.mNumberOfSlots = 1;
+			Level7.mNumberOfSlots = 1;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			spellSlots.push_back(Level3);
+			spellSlots.push_back(Level4);
+			spellSlots.push_back(Level5);
+			spellSlots.push_back(Level6);
+			spellSlots.push_back(Level7);
+			break;
+		case 14:
+			cantripsKnown = 4;
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			Level3.mNumberOfSlots = 3;
+			Level4.mNumberOfSlots = 3;
+			Level5.mNumberOfSlots = 2;
+			Level6.mNumberOfSlots = 1;
+			Level7.mNumberOfSlots = 1;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			spellSlots.push_back(Level3);
+			spellSlots.push_back(Level4);
+			spellSlots.push_back(Level5);
+			spellSlots.push_back(Level6);
+			spellSlots.push_back(Level7);
+			break;
+		case 15:
+			cantripsKnown = 4;
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			Level3.mNumberOfSlots = 3;
+			Level4.mNumberOfSlots = 3;
+			Level5.mNumberOfSlots = 2;
+			Level6.mNumberOfSlots = 1;
+			Level7.mNumberOfSlots = 1;
+			Level8.mNumberOfSlots = 1;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			spellSlots.push_back(Level3);
+			spellSlots.push_back(Level4);
+			spellSlots.push_back(Level5);
+			spellSlots.push_back(Level6);
+			spellSlots.push_back(Level7);
+			spellSlots.push_back(Level8);
+			break;
+		case 16:
+			cantripsKnown = 4;
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			Level3.mNumberOfSlots = 3;
+			Level4.mNumberOfSlots = 3;
+			Level5.mNumberOfSlots = 2;
+			Level6.mNumberOfSlots = 1;
+			Level7.mNumberOfSlots = 1;
+			Level8.mNumberOfSlots = 1;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			spellSlots.push_back(Level3);
+			spellSlots.push_back(Level4);
+			spellSlots.push_back(Level5);
+			spellSlots.push_back(Level6);
+			spellSlots.push_back(Level7);
+			spellSlots.push_back(Level8);
+			break;
+		case 17:
+			cantripsKnown = 4;
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			Level3.mNumberOfSlots = 3;
+			Level4.mNumberOfSlots = 3;
+			Level5.mNumberOfSlots = 2;
+			Level6.mNumberOfSlots = 1;
+			Level7.mNumberOfSlots = 1;
+			Level8.mNumberOfSlots = 1;
+			Level9.mNumberOfSlots = 1;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			spellSlots.push_back(Level3);
+			spellSlots.push_back(Level4);
+			spellSlots.push_back(Level5);
+			spellSlots.push_back(Level6);
+			spellSlots.push_back(Level7);
+			spellSlots.push_back(Level8);
+			spellSlots.push_back(Level9);
+			break;
+		case 18:
+			cantripsKnown = 4;
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			Level3.mNumberOfSlots = 3;
+			Level4.mNumberOfSlots = 3;
+			Level5.mNumberOfSlots = 2;
+			Level6.mNumberOfSlots = 1;
+			Level7.mNumberOfSlots = 1;
+			Level8.mNumberOfSlots = 1;
+			Level9.mNumberOfSlots = 1;;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			spellSlots.push_back(Level3);
+			spellSlots.push_back(Level4);
+			spellSlots.push_back(Level5);
+			spellSlots.push_back(Level6);
+			spellSlots.push_back(Level7);
+			spellSlots.push_back(Level8);
+			spellSlots.push_back(Level9);
+			break;
+		case 19:
+			cantripsKnown = 4;
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			Level3.mNumberOfSlots = 3;
+			Level4.mNumberOfSlots = 3;
+			Level5.mNumberOfSlots = 2;
+			Level6.mNumberOfSlots = 2;
+			Level7.mNumberOfSlots = 1;
+			Level8.mNumberOfSlots = 1;
+			Level9.mNumberOfSlots = 1;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			spellSlots.push_back(Level3);
+			spellSlots.push_back(Level4);
+			spellSlots.push_back(Level5);
+			spellSlots.push_back(Level6);
+			spellSlots.push_back(Level7);
+			spellSlots.push_back(Level8);
+			spellSlots.push_back(Level9);
+			break;
+		default:
+			cantripsKnown = 4;
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			Level3.mNumberOfSlots = 3;
+			Level4.mNumberOfSlots = 3;
+			Level5.mNumberOfSlots = 2;
+			Level6.mNumberOfSlots = 2;
+			Level7.mNumberOfSlots = 2;
+			Level8.mNumberOfSlots = 1;
+			Level9.mNumberOfSlots = 1;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			spellSlots.push_back(Level3);
+			spellSlots.push_back(Level4);
+			spellSlots.push_back(Level5);
+			spellSlots.push_back(Level6);
+			spellSlots.push_back(Level7);
+			spellSlots.push_back(Level8);
+			spellSlots.push_back(Level9);
+			break;
+		}
+	}
+
+	void Dice::DetermineSpellSlotsHalf(int lvl, int& cantripsKnown, std::vector<SpellSlots>& spellSlots)
+	{
+		SpellSlots Level1(1, 0);
+		SpellSlots Level2(2, 0);
+		SpellSlots Level3(3, 0);
+		SpellSlots Level4(4, 0);
+		SpellSlots Level5(5, 0);
+
+		switch (lvl) {
+		case 1:
+			cantripsKnown = 2;
+			Level1.mNumberOfSlots = 2;
+			spellSlots.push_back(Level1);
+			break;
+		case 2:
+			cantripsKnown = 2;
+			Level1.mNumberOfSlots = 2;
+			spellSlots.push_back(Level1);
+			break;
+		case 3:
+			cantripsKnown = 2;
+			Level1.mNumberOfSlots = 3;
+			spellSlots.push_back(Level1);
+			break;
+		case 4:
+			cantripsKnown = 2;
+			Level1.mNumberOfSlots = 3;
+			spellSlots.push_back(Level1);
+			break;
+		case 5:
+			cantripsKnown = 2;
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 2;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			break;
+		case 6:
+			cantripsKnown = 2;
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 2;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			break;
+		case 7:
+			cantripsKnown = 2;
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			break;
+		case 8:
+			cantripsKnown = 2;
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			break;
+		case 9:
+			cantripsKnown = 2;
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			Level3.mNumberOfSlots = 2;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			spellSlots.push_back(Level3);
+			break;
+		case 10:
+			cantripsKnown = 3;
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			Level3.mNumberOfSlots = 2;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			spellSlots.push_back(Level3);
+			break;
+		case 11:
+			cantripsKnown = 3;
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			Level3.mNumberOfSlots = 3;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			spellSlots.push_back(Level3);
+			break;
+		case 12:
+			cantripsKnown = 3;
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			Level3.mNumberOfSlots = 3;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			spellSlots.push_back(Level3);
+			break;
+		case 13:
+			cantripsKnown = 3;
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			Level3.mNumberOfSlots = 3;
+			Level4.mNumberOfSlots = 1;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			spellSlots.push_back(Level3);
+			spellSlots.push_back(Level4);
+			break;
+		case 14:
+			cantripsKnown = 4;
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			Level3.mNumberOfSlots = 3;
+			Level4.mNumberOfSlots = 1;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			spellSlots.push_back(Level3);
+			spellSlots.push_back(Level4);
+			break;
+		case 15:
+			cantripsKnown = 4;
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			Level3.mNumberOfSlots = 3;
+			Level4.mNumberOfSlots = 2;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			spellSlots.push_back(Level3);
+			spellSlots.push_back(Level4);
+			break;
+		case 16:
+			cantripsKnown = 4;
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			Level3.mNumberOfSlots = 3;
+			Level4.mNumberOfSlots = 2;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			spellSlots.push_back(Level3);
+			spellSlots.push_back(Level4);
+			break;
+		case 17:
+			cantripsKnown = 4;
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			Level3.mNumberOfSlots = 3;
+			Level4.mNumberOfSlots = 3;
+			Level5.mNumberOfSlots = 1;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			spellSlots.push_back(Level3);
+			spellSlots.push_back(Level4);
+			spellSlots.push_back(Level5);
+			break;
+		case 18:
+			cantripsKnown = 4;
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			Level3.mNumberOfSlots = 3;
+			Level4.mNumberOfSlots = 3;
+			Level5.mNumberOfSlots = 1;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			spellSlots.push_back(Level3);
+			spellSlots.push_back(Level4);
+			spellSlots.push_back(Level5);
+			break;
+		case 19:
+			cantripsKnown = 4;
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			Level3.mNumberOfSlots = 3;
+			Level4.mNumberOfSlots = 3;
+			Level5.mNumberOfSlots = 2;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			spellSlots.push_back(Level3);
+			spellSlots.push_back(Level4);
+			spellSlots.push_back(Level5);
+			break;
+		default:
+			cantripsKnown = 4;
+			Level1.mNumberOfSlots = 4;
+			Level2.mNumberOfSlots = 3;
+			Level3.mNumberOfSlots = 3;
+			Level4.mNumberOfSlots = 3;
+			Level5.mNumberOfSlots = 2;
+			spellSlots.push_back(Level1);
+			spellSlots.push_back(Level2);
+			spellSlots.push_back(Level3);
+			spellSlots.push_back(Level4);
+			spellSlots.push_back(Level5);
+			break;
+		}
+	}
+
 	std::vector<int> Dice::RollAS() {
 
 		std::cout << "Rolling your ability scores..." << endl;

@@ -98,97 +98,51 @@ public:
 			mIsCaster = false;
 		}
 		//getters
-		int Str() const {
-			return mStrength;
-		}
+		int Str() const { return mStrength; }
 
-		int StrBonus() const {
-			return mStrBonus;
-		}
+		int StrBonus() const { return mStrBonus; }
 
-		int Dex() const {
-			return mDexterity;
-		}
+		int Dex() const { return mDexterity; }
 		
-		int DexBonus() const {
-			return mDexBonus;
-		}
+		int DexBonus() const { return mDexBonus; }
 
-		int Con() const {
-			return mConstitution;
-		}
+		int Con() const { return mConstitution; }
 
-		int ConBonus() const {
-			return mConBonus;
-		}
+		int ConBonus() const { return mConBonus; }
 
-		int Wis() const {
-			return mWisdom;
-		}
+		int Wis() const { return mWisdom; }
 
-		int WisBonus() const {
-			return mWisBonus;
-		}
+		int WisBonus() const { return mWisBonus; }
 
-		int Intel() const {
-			return mIntelligence;
-		}
+		int Intel() const { return mIntelligence; }
 
-		int IntelBonus() const {
-			return mIntBonus;
-		}
+		int IntelBonus() const { return mIntBonus; }
 
-		int Cha() const {
-			return mCharisma;
-		}
+		int Cha() const { return mCharisma; }
 
-		int ChaBonus() const {
-			return mChaBonus;
-		}
+		int ChaBonus() const { return mChaBonus; }
 
-		int ProfBonus() const {
-			return mProfBonus;
-		}
+		int ProfBonus() const { return mProfBonus; }
 
-		int Lvl() const {
-			return mLvl;
-		}
+		int Lvl() const { return mLvl; }
 
-		int ArmorClass() const {
-			return mArmorClass;
-		}
+		int ArmorClass() const { return mArmorClass; }
 
-		int HitDie() const {
-			return mHitDie;
-		}
+		int HitDie() const { return mHitDie; }
 
-		int HitPoints() const {
-			return mHitPoints;
-		}
+		int HitPoints() const { return mHitPoints; }
 		
-		int StrAttack() const {
-			return mStrAttackMod;
-		}
+		int StrAttack() const { return mStrAttackMod; }
 
-		int DexAttack() const {
-			return mDexAttackMod;
-		}
+		int DexAttack() const { return mDexAttackMod; }
 
-		int SpellSave() const {
-			return mSpellSaveDc;
-		}
+		int SpellSave() const { return mSpellSaveDc; }
 
-		int SpellAttack() const {
-			return mSpellAttack;
-		}
+		int SpellAttack() const { return mSpellAttack; }
 
-		bool IsCaster() const {
-			return mIsCaster;
-		}
+		bool IsCaster() const { return mIsCaster; }
 
-		string Name() const {
-			return mCharacterName;
-		}
+		string Name() const { return mCharacterName; }
 
 		
 
@@ -240,6 +194,7 @@ public:
 		void IsCaster(bool isCaster) {
 			mIsCaster = isCaster;
 		}
+		
 
 		void Name(string newName) {
 			mCharacterName = newName;

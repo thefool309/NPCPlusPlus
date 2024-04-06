@@ -24,7 +24,9 @@ void Warlock::DetermineSpellStats()
 {
 	SpellSave(8 + ChaBonus() + ProfBonus());	//spell save and spell attack
 	SpellAttack(ChaBonus() + ProfBonus());
-
+	
+	IsCaster(true);
+	
 	switch (Lvl()) {
 	case 1:
 		mCantripsKnown = 2;

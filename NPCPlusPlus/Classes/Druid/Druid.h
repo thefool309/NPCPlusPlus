@@ -1,11 +1,11 @@
 #pragma once
 #include "Character.h"
-#include<map>
+#include<vector>
 class Druid :
     public Character
 {
 private:
-	std::map<string, int> mSpellSlots;
+	std::vector<SpellSlots> mSpellSlots;
 	int mWildshape;
 	std::string mWildshapeLvl;
 	int mCantripsKnown;
@@ -18,7 +18,7 @@ public:
 		WildShape();
 	}
 	//getters
-	std::map<string, int> SpellSlots() const {
+	std::vector<SpellSlots> SpellSlots() const {
 		return mSpellSlots;
 	}
 

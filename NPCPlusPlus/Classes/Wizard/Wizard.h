@@ -1,6 +1,7 @@
 #pragma once
 #include "Character.h"
 #include "Structs.h"
+#include "TheDiceBag.h"
 
 class Wizard :
 	public Character
