@@ -26,111 +26,15 @@
 #include "Wizard.h"
 #include "Utils.h"
 #include "UI.h"
+#include "Helper.h"
+#include "enums.h"
+#include "Structs.h"
 
 using namespace std;
 
 int main()
 {
-	//AS in this context is ability scores shortened for brevity
-	// this is to represent the minimum and maximum amount you can roll on ability scores 
-	srand(time(NULL));
-	int ASmaxValue = 18;
-	int ASminValue = 9;
-
-	string name = UI::GetString("please enter your characters name", "Name: ");
-
-	//roll ability scores
-	vector<int> scores = Dice::RollAS();
-	//print the ability scores back
-	for (int i = 0; i < scores.size(); i++) {
-		cout << "Score Rolled: " << scores[i] << endl;
-	}
-	
-	
-
-	//define variables for ability scores and bonuses
-	int str;
-	int dex;
-	int con;
-	int intel;
-	int wis;
-	int cha;
-	//as or AS in these contexts stands for ability score
-	//define input constants for the programs min and max values
-
-	const int PROF_MIN_INPUT = 2; // Proficiency bonus input minimum
-	const int PROF_MAX_INPUT = 6; // proficiency bonus input maximum
-
-	const int NUMBER_OF_DICE_MIN = 1; //lowest input for numberOfDice
-	const int NUMBER_OF_DICE_MAX = 20;//Highest input for numberOfDice
-
-	const int HITDIE_INPUT_MIN = 1; //lowest input for maxHitDie
-	const int HITDIE_INPUT_MAX = 12; //highest input for maxHitDie
-
-	const int MISC_ATTACK_BONUS_MIN = 0; //lowest input for misc attack mods
-	const int MISC_ATTACK_BONUS_MAX = 10; //highest input for misc attack mods
-
-	//take user input on where they would like to assign these scores
-
-	UI::TakeAllAbilityScores(str, dex, con, wis, intel, cha);
-
-	UI::ClearConsole();
-
-	int numberOfDice = 0;
-	//define prompts for the ui input method
-	string numberOfDicePrime = "Please enter the number of Hit Dice (a.k.a. the LVL)";
-	string numberOfDicePrompt = "Number of Hit Dice: ";
-
-	int maxHitDie = 0;
-	//define prompts for the ui input method
-	string hitdiePrime = "Please enter the maximum value of the hit die";
-	string hitdiePrompt = "Largest Number on Hit Die: ";
-
-	//user inputs numberOfDice and program verifies that it is in range
-	numberOfDice = UI::VerifyIntegerInput(NUMBER_OF_DICE_MIN, NUMBER_OF_DICE_MAX, numberOfDicePrime, numberOfDicePrompt);	//lvl
-	Character newCharacter(str, dex, con, intel, wis, cha, numberOfDice, maxHitDie, name);
-	///created new character
-	UI::ClearConsole();
-
-	
-
-	cout << "these are your final scores:" << endl
-		<< setw(10) << "STR:" << setw(3) << newCharacter.Str() << setw(3) ///calling getters on new character
-		<< "  STR Bonus: " << setw(3) << newCharacter.StrBonus() << endl
-
-		<< setw(10) << "DEX:" << setw(3) << newCharacter.Dex() << setw(3)
-		<< "  DEX Bonus: " << setw(3) << newCharacter.DexBonus() << endl
-
-		<< setw(10) << "CON:" << setw(3) << newCharacter.Con() << setw(3)
-		<< "  CON Bonus: " << setw(3) << newCharacter.ConBonus() << endl
-
-		<< setw(10) << "INT:" << setw(3) << newCharacter.Intel() << setw(3)
-		<< "  INT Bonus: " << setw(3) << newCharacter.IntelBonus() << endl
-
-		<< setw(10) << "WIS:" << setw(3) << newCharacter.Wis() << setw(3)
-		<< "  WIS Bonus: " << setw(3) << newCharacter.WisBonus() << endl
-
-		<< setw(10) << "CHA:" << setw(3) << newCharacter.Cha() << setw(3)
-		<< "  CHA Bonus: " << setw(3) << newCharacter.ChaBonus() << endl;
-
-	cin.get();
-
-	cout << "These are your attack bonuses: " << endl
-		<< "STR based Attack Bonus: " << newCharacter.StrAttack() << endl
-		<< "DEX based Attack Bonus: " << newCharacter.DexAttack() << endl;
-	if (newCharacter.IsCaster()) {
-		cout << "Your Spell attack bonus: " << newCharacter.SpellAttack() << endl
-			 << "Your Spell Save DC: " << newCharacter.SpellSave() << endl;
-	}
-	cin.get();
-
-	cout << endl << "Your HitPoints: " << newCharacter.HitPoints() << endl;
-
-	cout << "Press any key to continue...";
-
-	cin.get();
-	
-
+	Utils::GenerateNPC();
 	return 0;
 }
 

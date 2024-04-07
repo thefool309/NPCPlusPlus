@@ -72,82 +72,130 @@ void Utils::DetermineSCAbility(int& scAttackBonus, int& spellSaveDC, int& profBo
 	}
 }
 
-void Utils::PrintCharacterPtr(Character* newCharacter)
+void Utils::PrintCharacterPtr(Character* character)
 {
-	std::cout << "these are your final scores:" << endl
-		<< std::setw(10) << "STR:" << std::setw(3) << newCharacter->Str() << setw(3)
-		<< "  STR Bonus: " << setw(3) << newCharacter->StrBonus() << endl
-
-		<< setw(10) << "DEX:" << setw(3) << newCharacter->Dex() << setw(3)
-		<< "  DEX Bonus: " << setw(3) << newCharacter->DexBonus() << endl
-
-		<< setw(10) << "CON:" << setw(3) << newCharacter->Con() << setw(3)
-		<< "  CON Bonus: " << setw(3) << newCharacter->ConBonus() << endl
-
-		<< setw(10) << "INT:" << setw(3) << newCharacter->Intel() << setw(3)
-		<< "  INT Bonus: " << setw(3) << newCharacter->IntelBonus() << endl
-
-		<< setw(10) << "WIS:" << setw(3) << newCharacter->Wis() << setw(3)
-		<< "  WIS Bonus: " << setw(3) << newCharacter->WisBonus() << endl
-
-		<< setw(10) << "CHA:" << setw(3) << newCharacter->Cha() << setw(3)
-		<< "  CHA Bonus: " << setw(3) << newCharacter->ChaBonus() << endl;
-
-	cin.get();
-
-	cout << "These are your attack bonuses: " << endl
-		<< "STR based Attack Bonus: " << newCharacter->StrAttack() << endl
-		<< "DEX based Attack Bonus: " << newCharacter->DexAttack() << endl;
-	if (newCharacter->IsCaster()) {
-		cout << "Your Spell attack bonus: " << newCharacter->SpellAttack() << endl
-			<< "Your Spell Save DC: " << newCharacter->SpellSave() << endl;
-	}
-	cin.get();
-
-	cout << endl << "Your HitPoints: " << newCharacter->HitPoints() << endl;
-
-	cout << "Press any key to continue...";
-
-	cin.get();
+	character->Print();
 }
 
-void Utils::PrintCharacter(Character newCharacter)
+Character* Utils::GenerateNPC()
 {
-	cout << "these are your final scores:" << endl
-		<< setw(10) << "STR:" << setw(3) << newCharacter.Str() << setw(3)
-		<< "  STR Bonus: " << setw(3) << newCharacter.StrBonus() << endl
+	//AS in this context is ability scores shortened for brevity
+	// this is to represent the minimum and maximum amount you can roll on ability scores 
+	srand(time(NULL));
+	int ASmaxValue = 18;
+	int ASminValue = 9;
 
-		<< setw(10) << "DEX:" << setw(3) << newCharacter.Dex() << setw(3)
-		<< "  DEX Bonus: " << setw(3) << newCharacter.DexBonus() << endl
+	string name = UI::GetString("please enter your characters name", "Name: ");
 
-		<< setw(10) << "CON:" << setw(3) << newCharacter.Con() << setw(3)
-		<< "  CON Bonus: " << setw(3) << newCharacter.ConBonus() << endl
-
-		<< setw(10) << "INT:" << setw(3) << newCharacter.Intel() << setw(3)
-		<< "  INT Bonus: " << setw(3) << newCharacter.IntelBonus() << endl
-
-		<< setw(10) << "WIS:" << setw(3) << newCharacter.Wis() << setw(3)
-		<< "  WIS Bonus: " << setw(3) << newCharacter.WisBonus() << endl
-
-		<< setw(10) << "CHA:" << setw(3) << newCharacter.Cha() << setw(3)
-		<< "  CHA Bonus: " << setw(3) << newCharacter.ChaBonus() << endl;
-
-	cin.get();
-
-	cout << "These are your attack bonuses: " << endl
-		<< "STR based Attack Bonus: " << newCharacter.StrAttack() << endl
-		<< "DEX based Attack Bonus: " << newCharacter.DexAttack() << endl;
-	if (newCharacter.IsCaster()) {
-		cout << "Your Spell attack bonus: " << newCharacter.SpellAttack() << endl
-			<< "Your Spell Save DC: " << newCharacter.SpellSave() << endl;
+	//roll ability scores
+	vector<int> scores = Dice::RollAS();
+	//print the ability scores back
+	for (int i = 0; i < scores.size(); i++) {
+		cout << "Score Rolled: " << scores[i] << endl;
 	}
-	cin.get();
 
-	cout << endl << "Your HitPoints: " << newCharacter.HitPoints() << endl;
 
-	cout << "Press any key to continue...";
 
-	cin.get();
+	//define variables for ability scores and bonuses
+	int str;
+	int dex;
+	int con;
+	int intel;
+	int wis;
+	int cha;
+	//as or AS in these contexts stands for ability score
+	//define input constants for the programs min and max values
+
+	const int PROF_MIN_INPUT = 2; // Proficiency bonus input minimum
+	const int PROF_MAX_INPUT = 6; // proficiency bonus input maximum
+
+	const int NUMBER_OF_DICE_MIN = 1; //lowest input for numberOfDice
+	const int NUMBER_OF_DICE_MAX = 20;//Highest input for numberOfDice
+
+	const int HITDIE_INPUT_MIN = 1; //lowest input for maxHitDie
+	const int HITDIE_INPUT_MAX = 12; //highest input for maxHitDie
+
+	const int MISC_ATTACK_BONUS_MIN = 0; //lowest input for misc attack mods
+	const int MISC_ATTACK_BONUS_MAX = 10; //highest input for misc attack mods
+
+	//take user input on where they would like to assign these scores
+
+	UI::TakeAllAbilityScores(str, dex, con, wis, intel, cha);
+
+	UI::ClearConsole();
+
+	int numberOfDice = 0;
+	//define prompts for the ui input method
+	string numberOfDicePrime = "Please enter the character's level";
+	string numberOfDicePrompt = "Lvl: ";
+
+	int maxHitDie = 0;
+	//define prompts for the ui input method
+	string hitdiePrime = "Please enter the maximum value of the hit die";
+	string hitdiePrompt = "Largest Number on Hit Die: ";
+
+	//user inputs numberOfDice and program verifies that it is in range
+	numberOfDice = UI::VerifyIntegerInput(NUMBER_OF_DICE_MIN, NUMBER_OF_DICE_MAX, numberOfDicePrime, numberOfDicePrompt);	//lvl
+	Character newCharacter(str, dex, con, intel, wis, cha, numberOfDice, maxHitDie, name);
+	///created new character
+	UI::ClearConsole();
+	Utils::PrintCharacterPtr(&newCharacter);
+	return &newCharacter;
 }
+
+pClass Utils::UserChooseClass()
+{
+	pClass result;
+	std::vector<std::string> menuOptions = { "Artificer", "Barbarian", "Bard", "NPC", "Cleric","Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard" };
+	Helper::PrintLine("---------------Classes---------------\n");
+	for (auto& option : menuOptions) {
+		Helper::PrintLine(option);
+	}
+	bool inputInvalid = true;
+	std::string selection;
+	int index;
+	do
+	{
+		bool isPrefix;
+		std::string searchResult;
+		selection = Helper::StringInput("Choose a class off this list and enter it below", "Class");
+		for (int i = 0; i < menuOptions.size(); i++) {
+			isPrefix = Helper::IsPrefix(selection, option);
+			if (isPrefix) {
+				searchResult = menuOptions[i];
+				index = i;
+				break;
+			}
+		}
+		if (isPrefix) {
+			bool isNeither;
+			do
+			{
+				Helper::PrintLine("Your choice is " + searchResult);
+				std::string yOrN = Helper::StringInput("Correct?(y/n)");
+				bool isY = Helper::IsPrefix(yOrN, "y");
+				bool isN = Helper::IsPrefix(yOrN, "n");
+				isNeither = true;
+				if (isY) {
+					inputInvalid = false;
+					isNeither = false;
+				}
+				else if (isN) {
+					inputInvalid = true;
+					isNeither = false;
+				}
+				else
+					Helper::PrintLine("Invalid Input try again");
+			} while (isNeither );
+			
+		}
+		else {
+			Helper::PrintLine("Invalid Input, Check your spelling");
+		}
+	} while (inputInvalid);
+	result = pClass(index);
+	return result;
+}
+
 
 

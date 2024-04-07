@@ -1,9 +1,4 @@
-#include <ctime>
-#include <cmath>
-#include <iostream>
-#include <string>
-#include <thread>
-#include <chrono>
+
 #include "TheDiceBag.H"
 /// <summary>
 /// This is the dicebag. 

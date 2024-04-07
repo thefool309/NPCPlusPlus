@@ -10,7 +10,7 @@ enum AbilityScore {
 };
 
 enum pClass {
-	Artificer = 1,
+	Artificer = 0,
 	Barbarian,
 	Bard,
 	NPC,
@@ -23,6 +23,6 @@ enum pClass {
 	Rogue,
 	Sorcerer,
 	Warlock,
-	Wizard = 14
+	Wizard = 13
 };
 

@@ -1,5 +1,11 @@
 #pragma once
 #include "Structs.h"
+#include <ctime>
+#include <cmath>
+#include <iostream>
+#include <string>
+#include <thread>
+#include <chrono>
 #include <vector>
 class Dice {
 public:
