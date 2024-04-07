@@ -160,7 +160,7 @@ pClass Utils::UserChooseClass()
 		std::string searchResult;
 		selection = Helper::StringInput("Choose a class off this list and enter it below", "Class");
 		for (int i = 0; i < menuOptions.size(); i++) {
-			isPrefix = Helper::IsPrefix(selection, option);
+			isPrefix = Helper::IsPrefix(selection, menuOptions[i]);
 			if (isPrefix) {
 				searchResult = menuOptions[i];
 				index = i;
@@ -185,8 +185,8 @@ pClass Utils::UserChooseClass()
 					isNeither = false;
 				}
 				else
-					Helper::PrintLine("Invalid Input try again");
-			} while (isNeither );
+					Helper::PrintLine("Invalid Input try again (y/n)");
+			} while (isNeither);
 			
 		}
 		else {
