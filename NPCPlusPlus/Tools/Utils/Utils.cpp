@@ -151,12 +151,13 @@ pClass Utils::UserChooseClass()
 	for (auto& option : menuOptions) {
 		Helper::PrintLine(option);
 	}
+	Helper::PrintLine("-------------------------------------");
 	bool inputInvalid = true;
 	std::string selection;
 	int index;
 	do
 	{
-		bool isPrefix;
+		bool isPrefix = false;
 		std::string searchResult;
 		selection = Helper::StringInput("Choose a class off this list and enter it below", "Class");
 		for (int i = 0; i < menuOptions.size(); i++) {
