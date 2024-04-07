@@ -161,8 +161,8 @@ pClass Utils::UserChooseClass()
 		std::string searchResult;
 		selection = Helper::StringInput("Choose a class off this list and enter it below", "Class");
 		for (int i = 0; i < menuOptions.size(); i++) {
-			isPrefix = Helper::IsPrefix(selection, menuOptions[i]);
-			if (isPrefix) {
+			isPrefix = Helper::IsPrefix(selection, menuOptions[i]);				//check if entry is a prefix to what they entered 
+			if (isPrefix) {														//this will hopefully help mitigate user input errors until I work in the GUI with a pulldown tab
 				searchResult = menuOptions[i];
 				index = i;
 				break;
@@ -176,7 +176,7 @@ pClass Utils::UserChooseClass()
 				std::string yOrN = Helper::StringInput("Correct?(y/n)");
 				bool isY = Helper::IsPrefix(yOrN, "y");
 				bool isN = Helper::IsPrefix(yOrN, "n");
-				isNeither = true;
+				isNeither = true;												//double check that the users input is what they desired 
 				if (isY) {
 					inputInvalid = false;
 					isNeither = false;
